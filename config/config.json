@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "karrieretre-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/karrieretre/KarrieretreWebPart.js",
+          "manifest": "./src/webparts/karrieretre/KarrieretreWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "KarrieretreWebPartStrings": "lib/webparts/karrieretre/loc/{locale}.js"
+  }
+}
