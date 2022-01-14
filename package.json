@@ -8,7 +8,8 @@
     "clean": "gulp clean",
     "test": "gulp test",
     "start": "gulp serve",
-    "trust": "gulp trust-dev-cert"
+    "trust": "gulp trust-dev-cert",
+    "bundle-and-package": "gulp bundle --ship & gulp package-solution --ship"
   },
   "dependencies": {
     "react": "16.13.1",

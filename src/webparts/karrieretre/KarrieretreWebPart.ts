@@ -8,8 +8,7 @@ import {
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 
 import * as strings from 'KarrieretreWebPartStrings';
-import Karrieretre from './components/Karrieretre';
-import { IKarrieretreProps } from './components/IKarrieretreProps';
+import {Karrieretre} from "./components/Karrieretre";
 
 export interface IKarrieretreWebPartProps {
   description: string;
@@ -18,10 +17,12 @@ export interface IKarrieretreWebPartProps {
 export default class KarrieretreWebPart extends BaseClientSideWebPart<IKarrieretreWebPartProps> {
 
   public render(): void {
-    const element: React.ReactElement<IKarrieretreProps> = React.createElement(
+    const element = React.createElement(
       Karrieretre,
       {
-        description: this.properties.description
+        description: this.properties.description,
+        spHttpClient: this.context.spHttpClient,
+        absoluteUrl: this.context.pageContext.web.absoluteUrl
       }
     );
 

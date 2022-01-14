@@ -1,25 +1,29 @@
 import * as React from 'react';
-import styles from './Karrieretre.module.scss';
-import { IKarrieretreProps } from './IKarrieretreProps';
-import { escape } from '@microsoft/sp-lodash-subset';
+import {SPHttpClient} from "@microsoft/sp-http";
+import {SvgTre} from "./svg-tre/SvgTre";
+import {useRolleTabell} from "../rest/useRolleTabell";
+import {RollerList} from "./roller-list/RollerList";
 
-export default class Karrieretre extends React.Component<IKarrieretreProps, {}> {
-  public render(): React.ReactElement<IKarrieretreProps> {
-    return (
-      <div className={ styles.karrieretre }>
-        <div className={ styles.container }>
-          <div className={ styles.row }>
-            <div className={ styles.column }>
-              <span className={ styles.title }>Welcome to SharePoint!</span>
-              <p className={ styles.subTitle }>Customize SharePoint experiences using Web Parts.</p>
-              <p className={ styles.description }>{escape(this.props.description)}</p>
-              <a href="https://aka.ms/spfx" className={ styles.button }>
-                <span className={ styles.label }>Learn more 1</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
+type KarrieretreProps = {
+    description: string;
+    spHttpClient: SPHttpClient;
+    absoluteUrl: string;
+};
+
+export const Karrieretre = ({description, spHttpClient, absoluteUrl}: KarrieretreProps) => {
+    const {roller, state} = useRolleTabell({spHttpClient, absoluteUrl});
+
+
+    if (state === "loading") {
+        return <span>Henter roller...</span>;
+    }
+    if (state === "error") {
+        return <span>Det oppstod en feil ved henting av roller!</span>;
+    }
+
+    return <>
+        <SvgTre/>
+        {description}
+        <RollerList roller={roller}/>
+    </>;
+};
