@@ -8,4 +8,5 @@ export interface IRolle {
     Rollebeskrivelse: string | null;
     Sistoppdatert: string | null;
     Title: string | null;
+    Akse: string | null;
 }
