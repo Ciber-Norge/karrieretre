@@ -1,6 +1,7 @@
 import * as React from "react";
 import {IRolle} from "../../rest/IRolle";
 import styles from "./RolleInformasjon.module.scss";
+import {Typography} from "../typography/Typography";
 
 type RolleInformasjonProps = {
     rolle: IRolle
@@ -29,9 +30,9 @@ type GridRowProps = {
 const GridRow = ({title, description, subtitle}: GridRowProps) => {
     return <div className={styles.gridrow}>
         <div role="rowheader" className={styles.rowheader}>
-            {title}
-            {subtitle && <p>{subtitle}</p>}
+            <Typography variant={"h3"}>{title}</Typography>
+            {subtitle && <Typography variant={"body2"}>{title}</Typography>}
         </div>
-        <div role="gridcell" className={styles.gridcell}>{description}</div>
+        <div role="gridcell" className={styles.gridcell}><Typography variant={"body1"}>{description}</Typography></div>
     </div>;
 };

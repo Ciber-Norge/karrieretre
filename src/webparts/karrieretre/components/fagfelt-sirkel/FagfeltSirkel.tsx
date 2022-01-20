@@ -4,30 +4,49 @@ import styles from "./FagfeltSirkel.module.scss";
 import {IPosisjon} from "../IPosisjon";
 import {Popup} from "../popup/Popup";
 import {RolleInformasjon} from "../rolle-informasjon/RolleInformasjon";
+import {useState} from "react";
+import {Typography} from "../typography/Typography";
+import {Color, TooltipPosisjon} from "../Karrieretre";
 
 
 type FagfeltSirkelProps = {
     title: string
     roller: IRolle[]
-    color: "green",
-    position: IPosisjon
+    color: Color,
+    position: IPosisjon,
+    size: "large" | "medium" | "small",
+    tooltipPosisjon: TooltipPosisjon
 };
 
-export const FagfeltSirkel = ({roller, title, color, position}: FagfeltSirkelProps) => {
+export const FagfeltSirkel = ({roller, title, color, position, size, tooltipPosisjon}: FagfeltSirkelProps) => {
+    const [valgtRolle, setValgtRolle] = useState<number>();
 
-    return <div className={`${styles.fagfelt}`}
-                style={{position: "absolute", left: `${position.x}%`, top: `${position.y}%`}}>
-        <h3 className={`${styles[`${color}-title`]}`}>{title}</h3>
-        <div className={`${styles[color]} ${styles.sirkel}`}
-        >
+    return <div className={`${styles.fagfelt} ${styles[size]} ${styles[color]}`}
+                style={{position: "absolute", left: `${position.x}%`, top: `${position.y}%`}}
+                onMouseLeave={() => setValgtRolle(undefined)}>
 
-            <ul>
-                {roller.map((rolle) => {
-                    return <li key={rolle.Id}><Popup
-                        content={<RolleInformasjon rolle={rolle}/>}
-                        color={color}>{rolle.Title}</Popup></li>;
-                })}
-            </ul>
+        <div className={`${styles.title}`}>
+            <Typography variant={"h3"}>{title}</Typography>
+        </div>
+
+        <div className={`${styles.sirkel}`}>
+            <div className={styles.sirkelContainer}>
+                <ul>
+                    {roller.map((rolle) => {
+                        return <li key={rolle.Id} onMouseEnter={() => {
+                            setValgtRolle(rolle.Id);
+                        }
+                        }>
+                            <Popup
+                                content={<RolleInformasjon rolle={rolle}/>}
+                                color={color} open={valgtRolle === rolle.Id} tooltipPosition={tooltipPosisjon}>
+                                {rolle.Title}
+                            </Popup>
+                        </li>;
+                    })}
+                </ul>
+            </div>
+
         </div>
     </div>;
 };
