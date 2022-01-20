@@ -31,7 +31,7 @@ const GridRow = ({title, description, subtitle}: GridRowProps) => {
     return <div className={styles.gridrow}>
         <div role="rowheader" className={styles.rowheader}>
             <Typography variant={"h3"}>{title}</Typography>
-            {subtitle && <Typography variant={"body2"}>{title}</Typography>}
+            {subtitle && <Typography variant={"body2"}>{subtitle}</Typography>}
         </div>
         <div role="gridcell" className={styles.gridcell}><Typography variant={"body1"}>{description}</Typography></div>
     </div>;
