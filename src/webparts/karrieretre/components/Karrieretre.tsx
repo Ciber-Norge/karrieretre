@@ -7,6 +7,7 @@ import {IRolle} from "../rest/IRolle";
 import {FagfeltSirkel} from "./fagfelt-sirkel/FagfeltSirkel";
 import {IPosisjon} from "./IPosisjon";
 import "./Karrieretre.module.scss";
+import {Stige} from "./stiger/Stige";
 
 type KarrieretreProps = {
     description: string;
@@ -73,13 +74,13 @@ export const Karrieretre = ({spHttpClient, absoluteUrl}: KarrieretreProps) => {
                 {
                     fagfeltTittel: "Ledelse",
                     sirkelPosisjon: {x: 22, y: 52},
-                    size: "large"
+                    size: "xLarge"
                 }
             ]
         },
         {
             avdelingsTittel: "Utvikling",
-            titlePosisjon: {x: 25, y: 5},
+            titlePosisjon: {x: 22, y: 5},
             color: "blue",
             tooltipPosisjon: "right",
             fagfelter: [
@@ -100,14 +101,14 @@ export const Karrieretre = ({spHttpClient, absoluteUrl}: KarrieretreProps) => {
                 },
                 {
                     fagfeltTittel: "Teknisk arkitektur",
-                    sirkelPosisjon: {x: 42, y: 0},
+                    sirkelPosisjon: {x: 38, y: 0},
                     size: "small"
                 }
             ]
         },
         {
             avdelingsTittel: "Digital workspace",
-            titlePosisjon: {x: 2, y: 31},
+            titlePosisjon: {x: 3, y: 29},
             color: "grey",
             tooltipPosisjon: "right",
             fagfelter: [
@@ -126,7 +127,7 @@ export const Karrieretre = ({spHttpClient, absoluteUrl}: KarrieretreProps) => {
             fagfelter: [
                 {
                     fagfeltTittel: "Salg",
-                    sirkelPosisjon: {x: 56, y: 55},
+                    sirkelPosisjon: {x: 56, y: 60},
                     size: "large"
                 }
             ]
@@ -135,6 +136,10 @@ export const Karrieretre = ({spHttpClient, absoluteUrl}: KarrieretreProps) => {
 
     return <>
         <SvgTre/>
+        <Stige variant={"1"} style={{position: "absolute", top: "52%", left: "71%"}}/>
+        <Stige variant={"2"} style={{position: "absolute", top: "58%", left: "47%"}}/>
+        <Stige variant={"3"} style={{position: "absolute", top: "4%", left: "52%"}}/>
+        <Stige variant={"4"} style={{position: "absolute", top: "26%", left: "20%"}}/>
 
         {avdelinger.map(({color, titlePosisjon, avdelingsTittel, fagfelter, tooltipPosisjon}) => {
             const rollerForAvdeling = filtrerRoller(roller, avdelingsTittel);
@@ -155,11 +160,12 @@ export const Karrieretre = ({spHttpClient, absoluteUrl}: KarrieretreProps) => {
 
 export type Color = "green" | "orange" | "blue" | "red" | "grey";
 export type TooltipPosisjon = "left" | "right" | "rightTop" | "leftTop";
+export type Size = "xLarge" | "large" | "small" | "medium";
 
 interface IFagfelt {
     fagfeltTittel: FagfeltType;
     sirkelPosisjon: IPosisjon;
-    size: "large" | "small" | "medium";
+    size: Size;
 }
 
 interface IAvdelinger {

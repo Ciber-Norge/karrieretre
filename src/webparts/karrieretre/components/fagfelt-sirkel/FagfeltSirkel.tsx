@@ -6,7 +6,7 @@ import {Popup} from "../popup/Popup";
 import {RolleInformasjon} from "../rolle-informasjon/RolleInformasjon";
 import {useState} from "react";
 import {Typography} from "../typography/Typography";
-import {Color, TooltipPosisjon} from "../Karrieretre";
+import {Color, Size, TooltipPosisjon} from "../Karrieretre";
 
 
 type FagfeltSirkelProps = {
@@ -14,7 +14,7 @@ type FagfeltSirkelProps = {
     roller: IRolle[]
     color: Color,
     position: IPosisjon,
-    size: "large" | "medium" | "small",
+    size: Size,
     tooltipPosisjon: TooltipPosisjon
 };
 
@@ -40,7 +40,7 @@ export const FagfeltSirkel = ({roller, title, color, position, size, tooltipPosi
                             <Popup
                                 content={<RolleInformasjon rolle={rolle}/>}
                                 color={color} open={valgtRolle === rolle.Id} tooltipPosition={tooltipPosisjon}>
-                                {rolle.Title}
+                                <Typography variant={"body1"}>{rolle.Title}</Typography>
                             </Popup>
                         </li>;
                     })}
