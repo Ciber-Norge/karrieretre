@@ -6,6 +6,8 @@ export interface IRolle {
     Oppdatertav: string | null;
     Personligeegenskaper: string | null;
     Rollebeskrivelse: string | null;
+    Formellkompetanse: string | null;
+    Erfaring: string | null;
     Sistoppdatert: string | null;
     Title: string | null;
     Akse: string | null;

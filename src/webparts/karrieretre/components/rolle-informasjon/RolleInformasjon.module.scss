@@ -1,0 +1,37 @@
+.rowheader {
+  font-size: 1rem;
+  text-transform: uppercase;
+  width: 110px;
+  flex-shrink: 0;
+  border-width: 0 2px 0 0;
+  border-style: solid;
+
+  p {
+    font-size: 0.6rem;
+    text-transform: none;
+  }
+}
+
+.gridcell {
+  font-size: 0.7rem;
+  padding-left: 6px
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  text-align: left;
+  padding: 10px;
+}
+
+.gridrow {
+  display: flex;
+  flex-direction: row;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+}
+
+.gridrow:last-child {
+  border-style: hidden;
+}

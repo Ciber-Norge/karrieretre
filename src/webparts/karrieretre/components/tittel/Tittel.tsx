@@ -1,4 +1,5 @@
 import * as React from 'react';
+import styles from "./Tittel.module.scss";
 
 type KarrieretreProps = {
     children: string
@@ -8,7 +9,7 @@ type KarrieretreProps = {
 
 export const Tittel = ({children, position, color}: KarrieretreProps) => {
 
-    return <h2 style={{position: "absolute", left: `${position.x}%`, top: `${position.y}%`, color, margin: 0}}>
+    return <h2 className={styles[color]} style={{position: "absolute", left: `${position.x}%`, top: `${position.y}%`, margin: 0}}>
         {children}
     </h2>;
 };

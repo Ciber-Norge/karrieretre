@@ -31,12 +31,24 @@ export const Karrieretre = ({description, spHttpClient, absoluteUrl}: Karrieretr
             color: "green",
             fagfelter: [
                 {
+                    fagfeltTittel: "Sikkerhet",
+                    sirkelPosisjon: {x: 82, y: 2},
+                },
+                {
                     fagfeltTittel: "Arkitektur",
-                    sirkelPosisjon: {x: 49, y: 22},
+                    sirkelPosisjon: {x: 49, y: 10},
                 },
                 {
                     fagfeltTittel: "Test og testledelse",
-                    sirkelPosisjon: {x: 70, y: 22},
+                    sirkelPosisjon: {x: 65, y: 12},
+                },
+                {
+                    fagfeltTittel: "Prosjektledelse",
+                    sirkelPosisjon: {x: 50, y: 28},
+                },
+                {
+                    fagfeltTittel: "Utredning og analyse",
+                    sirkelPosisjon: {x: 70, y: 33},
                 }
             ]
         }
@@ -74,7 +86,7 @@ interface IAvdelinger {
 }
 
 type AvdelingsType = "Rådgivning";
-type FagfeltType = "Arkitektur" | "Test og testledelse";
+type FagfeltType = "Arkitektur" | "Test og testledelse" | "Prosjektledelse" |"Sikkerhet" | "Utredning og analyse";
 
 const filtrerRoller = (roller: IRolle[], avdeling: AvdelingsType, fagfelt: FagfeltType) => {
     return roller.filter((rolle) => {

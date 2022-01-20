@@ -1,17 +1,18 @@
 import * as React from "react";
 import styles from "./Popup.module.scss";
-import {IPosisjon} from "../IPosisjon";
 
 
 type FagfeltSirkelProps = {
-    position: IPosisjon
+    content: React.ReactNode,
+    children: React.ReactNode,
+    color: "green"
 };
 
-export const Popup = ({position}: FagfeltSirkelProps) => {
+export const Popup = ({content, children, color}: FagfeltSirkelProps) => {
 
 
-    return <div className={`${styles.popup}`}
-                style={{position: "absolute", right: `${position.x}px`, top: `${position.y}px`}}>
-            Jeg heter Lasse
+    return <div className={`${styles.tooltip}`}>
+        <div className={`${styles.tooltipContent} ${styles[color]}`}>{content}</div>
+        {children}
     </div>;
 };
