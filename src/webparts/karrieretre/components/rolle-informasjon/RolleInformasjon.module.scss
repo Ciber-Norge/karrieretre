@@ -1,0 +1,30 @@
+.rowheader {
+  width: 150px;
+  flex-shrink: 0;
+  border-width: 0 2px 0 0;
+  border-style: solid;
+  padding: 6px 0 6px 0;
+}
+
+.gridcell {
+  padding: 6px 0 6px 6px;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  text-align: left;
+  padding: 10px;
+}
+
+.gridrow {
+  display: flex;
+  flex-direction: row;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+}
+
+.gridrow:last-child {
+  border-style: hidden;
+}

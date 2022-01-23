@@ -1,0 +1,46 @@
+.h1 {
+  font-size: 2rem;
+  @media only screen and (min-height: 1200px) {
+    font-size: 2rem;
+  }
+}
+
+.h2 {
+  font-size: 1.2rem;
+  @media only screen and (min-height: 1200px) {
+    font-size: 1.4rem;
+  }
+}
+
+.h3 {
+  font-size: 1.0rem;
+  line-height: 23px;
+  @media only screen and (min-height: 1200px) {
+    font-size: 1.2rem;
+  }
+}
+
+.body1 {
+  font-size: 0.75rem;
+  line-height: 16px;
+  @media only screen and (min-height: 1200px) {
+    font-size: 0.9rem;
+    line-height: 19px;
+  }
+}
+
+.body2 {
+  font-size: 0.6rem;
+  line-height: 15px;
+  @media only screen and (min-height: 1200px) {
+    font-size: 0.7rem;
+  }
+}
+
+.zeroMargin {
+  margin: 0;
+}
+
+.upperCase {
+  text-transform: uppercase;
+}

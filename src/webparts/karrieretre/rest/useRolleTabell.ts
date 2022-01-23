@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {SPHttpClient} from "@microsoft/sp-http";
-import {IRolle} from "./IRolle";
+import {IRolle} from "../models/IRolle";
 
 type FetchStateType = "idle" | "loading" | "error" | "success";
 
