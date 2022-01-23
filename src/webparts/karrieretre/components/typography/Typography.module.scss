@@ -1,63 +1,23 @@
 .h1 {
-  @media only screen and (max-width: 1600px) {
-    font-size: 2rem;
-  }
-  @media only screen and (min-width: 1600px) {
-    font-size: 2.5rem;
-  }
-  @media only screen and (min-width: 1800px) {
-    font-size: 3rem;
-  }
+  font-size: 2rem;
 }
 
 .h2 {
   text-transform: uppercase;
   word-spacing: 999999px; // force break white space
-  @media only screen and (max-width: 1600px) {
-    font-size: 1.3rem;
-  }
-  @media only screen and (min-width: 1600px) {
-    font-size: 1.5rem;
-  }
-  @media only screen and (min-width: 1800px) {
-    font-size: 2.0rem;
-  }
+  font-size: 1.4rem;
 }
 
 .h3 {
-  @media only screen and (max-width: 1600px) {
-    font-size: 1rem;
-  }
-  @media only screen and (min-width: 1600px) {
-    font-size: 1.2rem;
-  }
-  @media only screen and (min-width: 1800px) {
-    font-size: 1.4rem;
-  }
+  font-size: 1.2rem;
 }
 
 .body1 {
-  @media only screen and (max-width: 1600px) {
-    font-size: 0.8rem;
-  }
-  @media only screen and (min-width: 1600px) {
-    font-size: 0.9rem;
-  }
-  @media only screen and (min-width: 1800px) {
-    font-size: 1rem;
-  }
+  font-size: 0.9rem;
 }
 
 .body2 {
-  @media only screen and (max-width: 1600px) {
-    font-size: 0.7rem;
-  }
-  @media only screen and (min-width: 1600px) {
-    font-size: 0.8rem;
-  }
-  @media only screen and (min-width: 1800px) {
-    font-size: 1rem;
-  }
+  font-size: 0.7rem;
 }
 
 .zeroMargin {

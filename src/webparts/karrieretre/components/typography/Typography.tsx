@@ -9,7 +9,7 @@ type TypographyProps = {
 export const Typography = ({variant, children}: TypographyProps) => {
     const getDefaultComponent = () => {
         if (variant === "body1" || variant === "body2") {
-            return "p";
+            return "div";
         }
         return variant;
     };

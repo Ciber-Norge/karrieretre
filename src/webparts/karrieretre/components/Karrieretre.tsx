@@ -3,11 +3,16 @@ import {SPHttpClient} from "@microsoft/sp-http";
 import {SvgTre} from "./svg-tre/SvgTre";
 import {useRolleTabell} from "../rest/useRolleTabell";
 import {Tittel} from "./tittel/Tittel";
-import {IRolle} from "../rest/IRolle";
+import {IRolle} from "../models/IRolle";
 import {FagfeltSirkel} from "./fagfelt-sirkel/FagfeltSirkel";
-import {IPosisjon} from "./IPosisjon";
+import {IPosisjon} from "../models/IPosisjon";
 import "./Karrieretre.module.scss";
 import {Stige} from "./stiger/Stige";
+import {FagfeltType} from "../models/FagfeltType";
+import {AvdelingsType} from "../models/AvdelingsType";
+import {Color} from "../models/Color";
+import {TooltipPosisjon} from "../models/TooltipPosisjon";
+import {Size} from "../models/Size";
 
 type KarrieretreProps = {
     description: string;
@@ -29,7 +34,7 @@ export const Karrieretre = ({spHttpClient, absoluteUrl}: KarrieretreProps) => {
     const avdelinger: IAvdelinger[] = [
         {
             avdelingsTittel: "Rådgivning",
-            titlePosisjon: {x: 62, y: 8},
+            titlePosisjon: {x: 64, y: 8},
             color: "green",
             tooltipPosisjon: "left",
             fagfelter: [
@@ -46,21 +51,21 @@ export const Karrieretre = ({spHttpClient, absoluteUrl}: KarrieretreProps) => {
                 {
                     fagfeltTittel: "Test og testledelse",
                     sirkelPosisjon: {x: 67, y: 16},
-                    size: "medium"
+                    size: "large"
                 },
                 {
                     fagfeltTittel: "Design",
-                    sirkelPosisjon: {x: 85, y: 20},
+                    sirkelPosisjon: {x: 90, y: 20},
                     size: "small"
                 },
                 {
                     fagfeltTittel: "Prosjektledelse",
-                    sirkelPosisjon: {x: 50, y: 28},
+                    sirkelPosisjon: {x: 50, y: 30},
                     size: "large"
                 },
                 {
                     fagfeltTittel: "Utredning og analyse",
-                    sirkelPosisjon: {x: 75, y: 33},
+                    sirkelPosisjon: {x: 75, y: 35},
                     size: "medium"
                 }
             ]
@@ -134,7 +139,7 @@ export const Karrieretre = ({spHttpClient, absoluteUrl}: KarrieretreProps) => {
         }
     ];
 
-    return <>
+    return <div style={{maxWidth: "1000px", maxHeight: "100%", position: "relative"}}>
         <SvgTre/>
         <Stige variant={"1"} style={{position: "absolute", top: "52%", left: "71%"}}/>
         <Stige variant={"2"} style={{position: "absolute", top: "58%", left: "47%"}}/>
@@ -155,12 +160,8 @@ export const Karrieretre = ({spHttpClient, absoluteUrl}: KarrieretreProps) => {
                 })}
             </React.Fragment>;
         })}
-    </>;
+    </div>;
 };
-
-export type Color = "green" | "orange" | "blue" | "red" | "grey";
-export type TooltipPosisjon = "left" | "right" | "rightTop" | "leftTop";
-export type Size = "xLarge" | "large" | "small" | "medium";
 
 interface IFagfelt {
     fagfeltTittel: FagfeltType;
@@ -175,21 +176,6 @@ interface IAvdelinger {
     tooltipPosisjon: TooltipPosisjon;
     fagfelter: IFagfelt[];
 }
-
-type AvdelingsType = "Rådgivning" | "Ledelse" | "Utvikling" | "Digital workspace" | "Salg";
-type FagfeltType =
-    "Arkitektur"
-    | "Test og testledelse"
-    | "Prosjektledelse"
-    | "Sikkerhet"
-    | "Utredning og analyse"
-    | "Design"
-    | "Utvikling"
-    | "Utviklingsprosjektledelse"
-    | "Teknisk arkitektur"
-    | "Digital workspace"
-    | "Salg"
-    | "Ledelse";
 
 const filtrerRoller = (roller: IRolle[], avdeling: AvdelingsType, fagfelt?: FagfeltType) => {
     return roller.filter((rolle) => {

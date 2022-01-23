@@ -1,5 +1,5 @@
 import * as React from "react";
-import {IRolle} from "../../rest/IRolle";
+import {IRolle} from "../../models/IRolle";
 import styles from "./RolleInformasjon.module.scss";
 import {Typography} from "../typography/Typography";
 

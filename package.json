@@ -9,7 +9,9 @@
     "test": "gulp test",
     "start": "gulp serve",
     "trust": "gulp trust-dev-cert",
-    "deploy": "gulp bundle --ship & gulp package-solution --ship"
+    "deploy-dev": "gulp package-solution",
+    "start-dev": "gulp serve --nobrowser",
+    "deploy-prod": "gulp bundle --ship & gulp package-solution --ship"
   },
   "dependencies": {
     "react": "16.13.1",

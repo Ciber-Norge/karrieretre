@@ -1,12 +1,14 @@
 import * as React from "react";
-import {IRolle} from "../../rest/IRolle";
+import {IRolle} from "../../models/IRolle";
 import styles from "./FagfeltSirkel.module.scss";
-import {IPosisjon} from "../IPosisjon";
-import {Popup} from "../popup/Popup";
+import {IPosisjon} from "../../models/IPosisjon";
+import {Tooltip} from "../tooltip/Tooltip";
 import {RolleInformasjon} from "../rolle-informasjon/RolleInformasjon";
 import {useState} from "react";
 import {Typography} from "../typography/Typography";
-import {Color, Size, TooltipPosisjon} from "../Karrieretre";
+import {Color} from "../../models/Color";
+import {TooltipPosisjon} from "../../models/TooltipPosisjon";
+import {Size} from "../../models/Size";
 
 
 type FagfeltSirkelProps = {
@@ -37,11 +39,11 @@ export const FagfeltSirkel = ({roller, title, color, position, size, tooltipPosi
                             setValgtRolle(rolle.Id);
                         }
                         }>
-                            <Popup
+                            <Tooltip
                                 content={<RolleInformasjon rolle={rolle}/>}
                                 color={color} open={valgtRolle === rolle.Id} tooltipPosition={tooltipPosisjon}>
                                 <Typography variant={"body1"}>{rolle.Title}</Typography>
-                            </Popup>
+                            </Tooltip>
                         </li>;
                     })}
                 </ul>

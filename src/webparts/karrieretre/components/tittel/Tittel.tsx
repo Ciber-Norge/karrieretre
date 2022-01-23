@@ -10,7 +10,7 @@ type KarrieretreProps = {
 
 export const Tittel = ({children, position, color}: KarrieretreProps) => {
 
-    return <div className={`${styles[color]}`} style={{position: "absolute", left: `${position.x}%`, top: `${position.y}%`}}>
+    return <div className={`${styles[color]}`} style={{position: "absolute", left: `${position.x}%`, top: `${position.y}%`, width: 0}}>
         <Typography variant={"h2"}>{children}</Typography>
     </div>;
 };
