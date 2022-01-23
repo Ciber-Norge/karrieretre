@@ -4,9 +4,10 @@ import styles from "./Typography.module.scss";
 type TypographyProps = {
     variant: "h1" | "h2" | "h3" | "body1" | "body2"
     children: React.ReactNode
+    upperCase?: boolean
 };
 
-export const Typography = ({variant, children}: TypographyProps) => {
+export const Typography = ({variant, children, upperCase = false}: TypographyProps) => {
     const getDefaultComponent = () => {
         if (variant === "body1" || variant === "body2") {
             return "div";
@@ -14,5 +15,5 @@ export const Typography = ({variant, children}: TypographyProps) => {
         return variant;
     };
     const Tag = getDefaultComponent();
-    return <Tag className={`${styles[variant]} ${styles.zeroMargin}`}>{children}</Tag>;
+    return <Tag className={`${styles[variant]} ${styles.zeroMargin} ${upperCase && styles.upperCase}`}>{children}</Tag>;
 };

@@ -17,10 +17,11 @@ type FagfeltSirkelProps = {
     color: Color,
     position: IPosisjon,
     size: Size,
-    tooltipPosisjon: TooltipPosisjon
+    tooltipPosisjon: TooltipPosisjon,
+    sirkelContainerStyle?: React.CSSProperties
 };
 
-export const FagfeltSirkel = ({roller, title, color, position, size, tooltipPosisjon}: FagfeltSirkelProps) => {
+export const FagfeltSirkel = ({roller, title, color, position, size, tooltipPosisjon, sirkelContainerStyle}: FagfeltSirkelProps) => {
     const [valgtRolle, setValgtRolle] = useState<number>();
 
     return <div className={`${styles.fagfelt} ${styles[size]} ${styles[color]}`}
@@ -32,7 +33,7 @@ export const FagfeltSirkel = ({roller, title, color, position, size, tooltipPosi
         </div>
 
         <div className={`${styles.sirkel}`}>
-            <div className={styles.sirkelContainer}>
+            <div className={styles.sirkelContainer} style={sirkelContainerStyle}>
                 <ul>
                     {roller.map((rolle) => {
                         return <li key={rolle.Id} onMouseEnter={() => {

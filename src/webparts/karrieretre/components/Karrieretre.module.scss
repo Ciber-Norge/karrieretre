@@ -1,5 +1,14 @@
 :global {
   #workbenchPageContent, .CanvasComponent.LCS .CanvasZone {
-    max-width: 80% !important;
+    max-width: 100% !important;
+  }
+}
+
+.treeContainer {
+  max-width: 840px;
+  position: relative;
+
+  @media only screen and (min-height: 1200px) {
+    max-width: 1000px;
   }
 }

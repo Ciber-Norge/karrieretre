@@ -1,14 +1,9 @@
 .rowheader {
-  text-transform: uppercase;
   width: 150px;
   flex-shrink: 0;
   border-width: 0 2px 0 0;
   border-style: solid;
   padding: 6px 0 6px 0;
-
-  p {
-    text-transform: none;
-  }
 }
 
 .gridcell {
@@ -18,7 +13,7 @@
 .grid {
   display: flex;
   flex-direction: column;
-  width: 45vw;
+  width: 40vw;
   text-align: left;
   padding: 10px;
 }

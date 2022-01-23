@@ -6,7 +6,7 @@ import {Tittel} from "./tittel/Tittel";
 import {IRolle} from "../models/IRolle";
 import {FagfeltSirkel} from "./fagfelt-sirkel/FagfeltSirkel";
 import {IPosisjon} from "../models/IPosisjon";
-import "./Karrieretre.module.scss";
+import styles from "./Karrieretre.module.scss";
 import {Stige} from "./stiger/Stige";
 import {FagfeltType} from "../models/FagfeltType";
 import {AvdelingsType} from "../models/AvdelingsType";
@@ -61,12 +61,19 @@ export const Karrieretre = ({spHttpClient, absoluteUrl}: KarrieretreProps) => {
                 {
                     fagfeltTittel: "Prosjektledelse",
                     sirkelPosisjon: {x: 50, y: 30},
-                    size: "large"
+                    size: "large",
+                    options: {
+                        paddingTop: "20px",
+                        tooltipPosisjon: "leftTop"
+                    }
                 },
                 {
                     fagfeltTittel: "Utredning og analyse",
                     sirkelPosisjon: {x: 75, y: 35},
-                    size: "medium"
+                    size: "medium",
+                    options: {
+                        tooltipPosisjon: "leftTop"
+                    }
                 }
             ]
         },
@@ -102,7 +109,10 @@ export const Karrieretre = ({spHttpClient, absoluteUrl}: KarrieretreProps) => {
                 {
                     fagfeltTittel: "Utviklingsprosjektledelse",
                     sirkelPosisjon: {x: 29, y: 30},
-                    size: "medium"
+                    size: "medium",
+                    options: {
+                        tooltipPosisjon: "rightTop"
+                    }
                 },
                 {
                     fagfeltTittel: "Teknisk arkitektur",
@@ -115,7 +125,7 @@ export const Karrieretre = ({spHttpClient, absoluteUrl}: KarrieretreProps) => {
             avdelingsTittel: "Digital workspace",
             titlePosisjon: {x: 3, y: 29},
             color: "grey",
-            tooltipPosisjon: "right",
+            tooltipPosisjon: "rightTop",
             fagfelter: [
                 {
                     fagfeltTittel: "Digital workspace",
@@ -139,7 +149,7 @@ export const Karrieretre = ({spHttpClient, absoluteUrl}: KarrieretreProps) => {
         }
     ];
 
-    return <div style={{maxWidth: "1000px", maxHeight: "100%", position: "relative"}}>
+    return <div className={styles.treeContainer}>
         <SvgTre/>
         <Stige variant={"1"} style={{position: "absolute", top: "52%", left: "71%"}}/>
         <Stige variant={"2"} style={{position: "absolute", top: "58%", left: "47%"}}/>
@@ -152,11 +162,12 @@ export const Karrieretre = ({spHttpClient, absoluteUrl}: KarrieretreProps) => {
                 <Tittel color={color} position={titlePosisjon}>
                     {avdelingsTittel}
                 </Tittel>
-                {fagfelter.map(({fagfeltTittel, sirkelPosisjon, size}) => {
+                {fagfelter.map(({fagfeltTittel, sirkelPosisjon, size, options = {}}) => {
                     return <FagfeltSirkel title={fagfeltTittel}
-                                          tooltipPosisjon={tooltipPosisjon}
+                                          tooltipPosisjon={options.tooltipPosisjon || tooltipPosisjon}
                                           roller={filtrerRoller(rollerForAvdeling, avdelingsTittel, fagfeltTittel)}
-                                          color={color} position={sirkelPosisjon} size={size}/>;
+                                          color={color} position={sirkelPosisjon} size={size}
+                                          sirkelContainerStyle={{paddingTop: options.paddingTop}}/>;
                 })}
             </React.Fragment>;
         })}
@@ -167,6 +178,10 @@ interface IFagfelt {
     fagfeltTittel: FagfeltType;
     sirkelPosisjon: IPosisjon;
     size: Size;
+    options?: {
+        tooltipPosisjon?: TooltipPosisjon;
+        paddingTop?: string;
+    };
 }
 
 interface IAvdelinger {
