@@ -6,7 +6,7 @@ import {
   PropertyPaneTextField
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
-
+import "./colors.module.scss";
 import * as strings from 'KarrieretreWebPartStrings';
 import {Karrieretre} from "./components/Karrieretre";
 
