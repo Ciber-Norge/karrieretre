@@ -1,0 +1,11 @@
+.drag {
+  cursor: grab;
+  background-color: white;
+  border: grey solid 1px;
+  border-radius: 2px;
+  padding: 2px;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  z-index: 1;
+}

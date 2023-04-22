@@ -9,9 +9,12 @@ import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import "./colors.module.scss";
 import * as strings from 'KarrieretreWebPartStrings';
 import {Karrieretre} from "./components/Karrieretre";
+import "./index.css"
 
 export interface IKarrieretreWebPartProps {
-  description: string;
+  avdelinger: string;
+  tableTitle: string
+  cssOptions: string
 }
 
 export default class KarrieretreWebPart extends BaseClientSideWebPart<IKarrieretreWebPartProps> {
@@ -20,9 +23,11 @@ export default class KarrieretreWebPart extends BaseClientSideWebPart<IKarrieret
     const element = React.createElement(
       Karrieretre,
       {
-        description: this.properties.description,
+        avdelingerString: this.properties.avdelinger,
+        tableTitle: this.properties.tableTitle,
         spHttpClient: this.context.spHttpClient,
-        absoluteUrl: this.context.pageContext.web.absoluteUrl
+        absoluteUrl: this.context.pageContext.web.absoluteUrl,
+        cssOptions: this.properties.cssOptions.split(",").map(v=>v.trim())
       }
     );
 
@@ -48,9 +53,17 @@ export default class KarrieretreWebPart extends BaseClientSideWebPart<IKarrieret
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
-                })
+                PropertyPaneTextField('tableTitle', {
+                  label: "Navn på tabell"
+                }),
+                PropertyPaneTextField('cssOptions', {
+                  label: "Css alternativer",
+                }),
+                PropertyPaneTextField('avdelinger', {
+                  label: "Innstillinger",
+                  multiline: true
+                }),
+
               ]
             }
           ]

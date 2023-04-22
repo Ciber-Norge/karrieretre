@@ -1,28 +1,39 @@
 import * as React from 'react';
+import {useEffect, useState} from 'react';
 import {SPHttpClient} from "@microsoft/sp-http";
 import {SvgTre} from "./svg-tre/SvgTre";
 import {useRolleTabell} from "../rest/useRolleTabell";
 import {Tittel} from "./tittel/Tittel";
-import {IRolle} from "../models/IRolle";
 import {FagfeltSirkel} from "./fagfelt-sirkel/FagfeltSirkel";
-import {IPosisjon} from "../models/IPosisjon";
 import styles from "./Karrieretre.module.scss";
 import {Stige} from "./stiger/Stige";
-import {FagfeltType} from "../models/FagfeltType";
-import {AvdelingsType} from "../models/AvdelingsType";
-import {Color} from "../models/Color";
-import {TooltipPosisjon} from "../models/TooltipPosisjon";
-import {Size} from "../models/Size";
+import {Button} from "./button/Button";
+import {filtrerRoller, getAvdelinger, IAvdelinger} from "./Karrieretre.util";
+import {IPosisjon} from "../models/IPosisjon";
+import {EditAvdelinger} from "./edit-avdelinger/EditAvdelinger";
 
 type KarrieretreProps = {
-    description: string;
+    avdelingerString?: string;
     spHttpClient: SPHttpClient;
     absoluteUrl: string;
+    tableTitle: string
+    cssOptions: string[]
 };
 
-export const Karrieretre = ({spHttpClient, absoluteUrl}: KarrieretreProps) => {
-    const {roller, state} = useRolleTabell({spHttpClient, absoluteUrl});
+export const Karrieretre = ({
+                                spHttpClient,
+                                absoluteUrl,
+                                avdelingerString,
+                                tableTitle,
+                                cssOptions
+                            }: KarrieretreProps) => {
+    const {roller, state} = useRolleTabell({spHttpClient, absoluteUrl, tableTitle});
+    const [avdelinger, setAvdelinger] = useState<IAvdelinger[]>(getAvdelinger(avdelingerString));
+    const [editMode, setEditMode] = useState(false);
 
+    useEffect(() => {
+        setAvdelinger(getAvdelinger(avdelingerString));
+    }, [avdelingerString]);
 
     if (state === "loading") {
         return <span>Henter roller...</span>;
@@ -31,172 +42,80 @@ export const Karrieretre = ({spHttpClient, absoluteUrl}: KarrieretreProps) => {
         return <span>Det oppstod en feil ved henting av roller!</span>;
     }
 
-    const avdelinger: IAvdelinger[] = [
-        {
-            avdelingsTittel: "Rådgivning",
-            titlePosisjon: {x: 64, y: 8},
-            color: "green",
-            tooltipPosisjon: "left",
-            fagfelter: [
-                {
-                    fagfeltTittel: "Sikkerhet",
-                    sirkelPosisjon: {x: 82, y: 6},
-                    size: "small"
-                },
-                {
-                    fagfeltTittel: "Arkitektur",
-                    sirkelPosisjon: {x: 49, y: 10},
-                    size: "medium"
-                },
-                {
-                    fagfeltTittel: "Test og testledelse",
-                    sirkelPosisjon: {x: 67, y: 16},
-                    size: "large"
-                },
-                {
-                    fagfeltTittel: "Design",
-                    sirkelPosisjon: {x: 90, y: 20},
-                    size: "small"
-                },
-                {
-                    fagfeltTittel: "Prosjektledelse",
-                    sirkelPosisjon: {x: 50, y: 30},
-                    size: "large",
-                    options: {
-                        paddingTop: "20px",
-                        tooltipPosisjon: "leftTop"
-                    }
-                },
-                {
-                    fagfeltTittel: "Utredning og analyse",
-                    sirkelPosisjon: {x: 75, y: 35},
-                    size: "medium",
-                    options: {
-                        tooltipPosisjon: "leftTop"
-                    }
-                }
-            ]
-        },
-        {
-            avdelingsTittel: "Ledelse",
-            titlePosisjon: {x: 41, y: 50},
-            color: "orange",
-            tooltipPosisjon: "rightTop",
-            fagfelter: [
-                {
-                    fagfeltTittel: "Ledelse",
-                    sirkelPosisjon: {x: 22, y: 52},
-                    size: "xLarge"
-                }
-            ]
-        },
-        {
-            avdelingsTittel: "Utvikling",
-            titlePosisjon: {x: 22, y: 5},
-            color: "blue",
-            tooltipPosisjon: "right",
-            fagfelter: [
-                {
-                    fagfeltTittel: "Utvikling",
-                    sirkelPosisjon: {x: 10, y: 8},
-                    size: "medium"
-                },
-                {
-                    fagfeltTittel: "Design",
-                    sirkelPosisjon: {x: 28, y: 12},
-                    size: "medium"
-                },
-                {
-                    fagfeltTittel: "Utviklingsprosjektledelse",
-                    sirkelPosisjon: {x: 29, y: 30},
-                    size: "medium",
-                    options: {
-                        tooltipPosisjon: "rightTop"
-                    }
-                },
-                {
-                    fagfeltTittel: "Teknisk arkitektur",
-                    sirkelPosisjon: {x: 38, y: 0},
-                    size: "small"
-                }
-            ]
-        },
-        {
-            avdelingsTittel: "Digital workspace",
-            titlePosisjon: {x: 3, y: 29},
-            color: "grey",
-            tooltipPosisjon: "rightTop",
-            fagfelter: [
-                {
-                    fagfeltTittel: "Digital workspace",
-                    sirkelPosisjon: {x: 5, y: 36},
-                    size: "medium"
-                }
-            ]
-        },
-        {
-            avdelingsTittel: "Salg",
-            titlePosisjon: {x: 77, y: 62},
-            color: "red",
-            tooltipPosisjon: "leftTop",
-            fagfelter: [
-                {
-                    fagfeltTittel: "Salg",
-                    sirkelPosisjon: {x: 56, y: 60},
-                    size: "large"
-                }
-            ]
+    const handleEditButtonClick = async () => {
+        if (editMode) {
+            await navigator.clipboard.writeText(JSON.stringify(avdelinger));
         }
-    ];
+        setEditMode(!editMode);
+    };
 
-    return <div className={styles.treeContainer}>
-        <SvgTre/>
-        <Stige variant={"1"} style={{position: "absolute", top: "52%", left: "71%"}}/>
-        <Stige variant={"2"} style={{position: "absolute", top: "58%", left: "47%"}}/>
-        <Stige variant={"3"} style={{position: "absolute", top: "4%", left: "52%"}}/>
-        <Stige variant={"4"} style={{position: "absolute", top: "26%", left: "20%"}}/>
+    const handleResetCss = () => {
+        setAvdelinger(avdelinger.map(a => ({...a, fagfelter: a.fagfelter.map(f => ({...f, options: {}}))})));
+    };
 
-        {avdelinger.map(({color, titlePosisjon, avdelingsTittel, fagfelter, tooltipPosisjon}) => {
-            const rollerForAvdeling = filtrerRoller(roller, avdelingsTittel);
-            return <React.Fragment>
-                <Tittel color={color} position={titlePosisjon}>
-                    {avdelingsTittel}
-                </Tittel>
-                {fagfelter.map(({fagfeltTittel, sirkelPosisjon, size, options = {}}) => {
-                    return <FagfeltSirkel title={fagfeltTittel}
-                                          tooltipPosisjon={options.tooltipPosisjon || tooltipPosisjon}
-                                          roller={filtrerRoller(rollerForAvdeling, avdelingsTittel, fagfeltTittel)}
-                                          color={color} position={sirkelPosisjon} size={size}
-                                          sirkelContainerStyle={{paddingTop: options.paddingTop}}/>;
-                })}
-            </React.Fragment>;
-        })}
+
+    return <div className={styles.appContainer}>
+        <div className={styles.treeContainer}>
+            <SvgTre/>
+            <Stige variant={"1"} style={{position: "absolute", top: "52%", left: "71%"}}/>
+            <Stige variant={"2"} style={{position: "absolute", top: "58%", left: "47%"}}/>
+            <Stige variant={"3"} style={{position: "absolute", top: "4%", left: "52%"}}/>
+            <Stige variant={"4"} style={{position: "absolute", top: "26%", left: "20%"}}/>
+
+            {avdelinger.map(({color, titlePosisjon, avdelingsTittel, fagfelter}) => {
+                const handleTitleDragEnd = (position: IPosisjon) => {
+                    setAvdelinger(avdelinger.map(avdeling => {
+                        return avdeling.avdelingsTittel === avdelingsTittel ? {
+                            ...avdeling,
+                            titlePosisjon: position
+                        } : avdeling;
+                    }));
+                };
+                const rollerForAvdeling = filtrerRoller(roller, avdelingsTittel);
+                return <React.Fragment key={avdelingsTittel}>
+                    <Tittel color={color} position={titlePosisjon} canEdit={editMode} onDragEnd={handleTitleDragEnd}>
+                        {avdelingsTittel}
+                    </Tittel>
+                    {fagfelter.map(({fagfeltTittel, sirkelPosisjon, options = {}}) => {
+                        const handleFagfeltDragEnd = (position: IPosisjon) => {
+                            setAvdelinger(avdelinger.map(avdeling => {
+                                return avdeling.avdelingsTittel === avdelingsTittel ? {
+                                    ...avdeling, fagfelter: avdeling.fagfelter.map(fagfelt => {
+                                        return fagfelt.fagfeltTittel === fagfeltTittel ? {
+                                            ...fagfelt,
+                                            sirkelPosisjon: position
+                                        } : fagfelt;
+                                    })
+                                } : avdeling;
+                            }));
+                        };
+                        return <FagfeltSirkel title={fagfeltTittel}
+                                              key={fagfeltTittel}
+                                              roller={filtrerRoller(rollerForAvdeling, avdelingsTittel, fagfeltTittel)}
+                                              color={color} position={sirkelPosisjon}
+                                              canEdit={editMode}
+                                              onDragEnd={handleFagfeltDragEnd}
+                                              sirkelContainerStyle={options}/>;
+                    })}
+                </React.Fragment>;
+            })}
+
+
+        </div>
+        <div>
+            {editMode && <EditAvdelinger roller={roller} avdelinger={avdelinger} setAvdelinger={setAvdelinger}
+                                         cssOptions={cssOptions}/>}
+            <div className={styles.buttonContainer}>
+                <Button onClick={handleEditButtonClick}>{editMode ? "Avslutt redigering og kopier" : "Rediger"}</Button>
+                {editMode && <Button onClick={handleResetCss}>Nullstill css</Button>}
+            </div>
+        </div>
+
     </div>;
 };
 
-interface IFagfelt {
-    fagfeltTittel: FagfeltType;
-    sirkelPosisjon: IPosisjon;
-    size: Size;
-    options?: {
-        tooltipPosisjon?: TooltipPosisjon;
-        paddingTop?: string;
-    };
-}
 
-interface IAvdelinger {
-    avdelingsTittel: AvdelingsType;
-    titlePosisjon: IPosisjon;
-    color: Color;
-    tooltipPosisjon: TooltipPosisjon;
-    fagfelter: IFagfelt[];
-}
 
-const filtrerRoller = (roller: IRolle[], avdeling: AvdelingsType, fagfelt?: FagfeltType) => {
-    return roller.filter((rolle) => {
-        if (!fagfelt) {
-            return rolle.Kluster.toUpperCase() === avdeling.toUpperCase();
-        }
-        return rolle.Kluster.toUpperCase() === avdeling.toUpperCase() && rolle.Akse.toUpperCase() === fagfelt.toUpperCase();
-    });
-};
+
+
+
