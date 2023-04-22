@@ -18,6 +18,7 @@ type KarrieretreProps = {
     absoluteUrl: string;
     tableTitle: string
     cssOptions: string[]
+    hasEditPermission: boolean
 };
 
 export const Karrieretre = ({
@@ -25,7 +26,8 @@ export const Karrieretre = ({
                                 absoluteUrl,
                                 avdelingerString,
                                 tableTitle,
-                                cssOptions
+                                cssOptions,
+                                hasEditPermission
                             }: KarrieretreProps) => {
     const {roller, state} = useRolleTabell({spHttpClient, absoluteUrl, tableTitle});
     const [avdelinger, setAvdelinger] = useState<IAvdelinger[]>(getAvdelinger(avdelingerString));
@@ -54,7 +56,7 @@ export const Karrieretre = ({
     };
 
 
-    return <div className={styles.appContainer}>
+    return <>
         <div className={styles.treeContainer}>
             <SvgTre/>
             <Stige variant={"1"} style={{position: "absolute", top: "52%", left: "71%"}}/>
@@ -102,16 +104,14 @@ export const Karrieretre = ({
 
 
         </div>
-        <div>
             {editMode && <EditAvdelinger roller={roller} avdelinger={avdelinger} setAvdelinger={setAvdelinger}
                                          cssOptions={cssOptions}/>}
             <div className={styles.buttonContainer}>
-                <Button onClick={handleEditButtonClick}>{editMode ? "Avslutt redigering og kopier" : "Rediger"}</Button>
+                {hasEditPermission && <Button onClick={handleEditButtonClick}>{editMode ? "Avslutt redigering og kopier" : "Rediger"}</Button>}
                 {editMode && <Button onClick={handleResetCss}>Nullstill css</Button>}
             </div>
-        </div>
 
-    </div>;
+    </>;
 };
 
 

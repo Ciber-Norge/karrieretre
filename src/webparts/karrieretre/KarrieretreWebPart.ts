@@ -10,6 +10,7 @@ import "./colors.module.scss";
 import * as strings from 'KarrieretreWebPartStrings';
 import {Karrieretre} from "./components/Karrieretre";
 import "./index.css"
+import {PageContext, SPPermission} from "@microsoft/sp-page-context";
 
 export interface IKarrieretreWebPartProps {
   avdelinger: string;
@@ -18,7 +19,6 @@ export interface IKarrieretreWebPartProps {
 }
 
 export default class KarrieretreWebPart extends BaseClientSideWebPart<IKarrieretreWebPartProps> {
-
   public render(): void {
     const element = React.createElement(
       Karrieretre,
@@ -27,7 +27,8 @@ export default class KarrieretreWebPart extends BaseClientSideWebPart<IKarrieret
         tableTitle: this.properties.tableTitle,
         spHttpClient: this.context.spHttpClient,
         absoluteUrl: this.context.pageContext.web.absoluteUrl,
-        cssOptions: this.properties.cssOptions.split(",").map(v=>v.trim())
+        cssOptions: this.properties.cssOptions.split(",").map(v=>v.trim()),
+        hasEditPermission: checkEditorPermission(this.context.pageContext)
       }
     );
 
@@ -71,4 +72,11 @@ export default class KarrieretreWebPart extends BaseClientSideWebPart<IKarrieret
       ]
     };
   }
+}
+
+function checkEditorPermission(pageContext: PageContext){
+  //Editor group can add item on list/library via addListItems permission
+  const permission = new SPPermission(pageContext.web.permissions.value);
+  const isMemberPermission = permission.hasPermission(SPPermission.addListItems);
+  return isMemberPermission;
 }

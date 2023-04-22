@@ -15,7 +15,7 @@ type EditAvdelingerProps = {
 
 export const EditAvdelinger = ({avdelinger, setAvdelinger, roller, cssOptions}: EditAvdelingerProps) => {
 
-    return <div className="mb-1">
+    return <div className={styles.container}>
         <Typography variant={"h2"} className="mb-1">Avdelinger</Typography>
 
         {avdelinger.map(({avdelingsTittel, fagfelter}) => {

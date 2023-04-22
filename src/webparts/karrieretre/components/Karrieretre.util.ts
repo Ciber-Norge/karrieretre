@@ -7,7 +7,7 @@ import {Color} from "../models/Color";
 export interface IFagfelt {
     fagfeltTittel: FagfeltType;
     sirkelPosisjon: IPosisjon;
-    options?: Partial<React.CSSProperties>
+    options?: Partial<React.CSSProperties>;
 }
 
 export interface IAvdelinger {
@@ -119,22 +119,24 @@ export const filtrerRoller = (roller: IRolle[], avdeling: AvdelingsType, fagfelt
     });
 };
 
-export const getAvailableAvdelinger = (roller: IRolle[]): AvdelingsType[]=>{
-    const set = new Set(roller.filter(r=>!!r.Kluster).map(rolle=>rolle.Kluster))
+export const getAvailableAvdelinger = (roller: IRolle[]): AvdelingsType[] => {
+    const set = new Set(roller.filter(r => !!r.Kluster).map(rolle => rolle.Kluster));
     const array: string [] = [];
     set.forEach(v => array.push(v));
-    return array
-}
+    return array;
+};
 
-export const getAvailableFagfelt = (roller: IRolle[], avdeling: AvdelingsType, selectedFagfelt: FagfeltType[]): AvdelingsType[]=>{
-    const set = new Set(roller.filter(r=>r.Kluster.toUpperCase() === avdeling.toUpperCase()).map(rolle=>rolle.Akse))
+export const getAvailableFagfelt = (roller: IRolle[], avdeling: AvdelingsType, selectedFagfelt: FagfeltType[]): AvdelingsType[] => {
+    const set = new Set(roller.filter(r => r.Kluster.toUpperCase() === avdeling.toUpperCase()).map(rolle => rolle.Akse));
     const array: string [] = [];
     set.forEach(v => {
-        if(selectedFagfelt.indexOf(v) === -1){
-            array.push(v)
+        if (selectedFagfelt.indexOf(v) === -1) {
+            array.push(v);
         }
     });
-    return array
-}
+    return array;
+};
+
+
 
 
