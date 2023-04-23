@@ -1,14 +1,6 @@
-# karrieretre
+# Karrieretre
 
-## Summary
-
-Short summary on functionality and used technologies.
-
-[picture of the solution in action, if possible]
-
-## Used SharePoint Framework Version
-
-![version](https://img.shields.io/badge/version-1.13-green.svg)
+![Bilde av løsning](solution.png "Title")
 
 ## Applies to
 
@@ -17,52 +9,32 @@ Short summary on functionality and used technologies.
 
 > Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
 
-## Prerequisites
 
-> Any special pre-requisites?
-
-## Solution
-
-Solution|Author(s)
---------|---------
-folder name | Author details (name, company, twitter alias with link)
-
-## Version history
-
-Version|Date|Comments
--------|----|--------
-1.1|March 10, 2021|Update comment
-1.0|January 29, 2021|Initial release
-
-## Disclaimer
-
-**THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
-
----
-
-## Minimal Path to Awesome
+## Local development
 
 - Clone this repository
 - Ensure that you are at the solution folder
 - in the command-line run:
-  - **npm install**
-  - **gulp serve**
+  - ``npm install``
+  - ``npm run start-dev``
+  - Go to https://manpowergroupapps.sharepoint.com/sites/NO-xeek/_layouts/15/workbench.aspx
 
-> Include any additional steps as needed.
+![Oppsett local utvikling](local-development.png "Title")
 
-## Features
+You must refresh on every change.
 
-Description of the extension that expands upon high-level summary above.
+## Deploy New version to Sharepoint Xeek
 
-This extension illustrates the following concepts:
+### Build new solution
+1. Iterate version in config/package-solution.json
+2. Run ``npm run deploy-prod``
+3. The packaged solution should be stored in ``sharepoint/solution/karriertre.sppkg``
 
-- topic 1
-- topic 2
-- topic 3
+### Deploy new solution
+1. Go to https://manpowergroupapps.sharepoint.com/sites/NO-xeek/_layouts/15/viewlsts.aspx
+2. Go to "Apps for Sharepoint"
+3. Upload solution file: ``sharepoint/solution/karriertre.sppkg`` and deploy
 
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
-
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
 
 ## References
 

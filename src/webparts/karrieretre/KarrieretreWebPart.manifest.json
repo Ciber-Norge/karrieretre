@@ -21,7 +21,9 @@
     "description": { "default": "Karrieretre description" },
     "officeFabricIconFontName": "Page",
     "properties": {
-      "description": "Karrieretre"
+      "description": "Karrieretre",
+      "tableTitle": "RolleTabell",
+      "cssOptions": "minWidth,padding,width,maxWidth,paddingTop,paddingBottom,paddingRight,paddingLeft"
     }
   }]
 }

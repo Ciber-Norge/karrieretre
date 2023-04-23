@@ -3,6 +3,22 @@ import {IRolle} from "../../models/IRolle";
 import styles from "./RolleInformasjon.module.scss";
 import {Typography} from "../typography/Typography";
 
+type GridRowProps = {
+    title: string;
+    subtitle?: string;
+    description: string;
+};
+
+const GridRow = ({title, description, subtitle}: GridRowProps) => {
+    return <div className={styles.gridrow}>
+        <div role="rowheader" className={styles.rowheader}>
+            <Typography variant={"h3"} upperCase>{title}</Typography>
+            {subtitle && <Typography variant={"body2"}>{subtitle}</Typography>}
+        </div>
+        <div role="gridcell" className={styles.gridcell}><Typography variant={"body1"}>{description}</Typography></div>
+    </div>;
+};
+
 type RolleInformasjonProps = {
     rolle: IRolle
 };
@@ -21,18 +37,4 @@ export const RolleInformasjon = ({rolle}: RolleInformasjonProps) => {
     </div>;
 };
 
-type GridRowProps = {
-    title: string;
-    subtitle?: string;
-    description: string;
-};
 
-const GridRow = ({title, description, subtitle}: GridRowProps) => {
-    return <div className={styles.gridrow}>
-        <div role="rowheader" className={styles.rowheader}>
-            <Typography variant={"h3"} upperCase>{title}</Typography>
-            {subtitle && <Typography variant={"body2"}>{subtitle}</Typography>}
-        </div>
-        <div role="gridcell" className={styles.gridcell}><Typography variant={"body1"}>{description}</Typography></div>
-    </div>;
-};

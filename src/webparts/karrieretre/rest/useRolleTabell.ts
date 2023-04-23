@@ -7,15 +7,16 @@ type FetchStateType = "idle" | "loading" | "error" | "success";
 type UseRolleTabellProps = {
     spHttpClient: SPHttpClient,
     absoluteUrl: string
+    tableTitle: string
 };
 
-export const useRolleTabell = ({spHttpClient, absoluteUrl}: UseRolleTabellProps) => {
+export const useRolleTabell = ({spHttpClient, absoluteUrl, tableTitle}: UseRolleTabellProps) => {
     const [roller, setRoller] = useState<IRolle[]>([]);
     const [state, setState] = useState<FetchStateType>("idle");
 
     useEffect(() => {
         setState("loading");
-        spHttpClient.get(`${absoluteUrl}/_api/web/lists/GetByTitle('RolleTabell')/items`, SPHttpClient.configurations.v1).then((result) => {
+        spHttpClient.get(`${absoluteUrl}/_api/web/lists/GetByTitle('${tableTitle}')/items`, SPHttpClient.configurations.v1).then((result) => {
             return result.json();
         }).then((body: { value: IRolle [] }) => {
             setRoller(body.value);
@@ -23,7 +24,7 @@ export const useRolleTabell = ({spHttpClient, absoluteUrl}: UseRolleTabellProps)
         }).catch(() => {
             setState("error");
         });
-    }, []);
+    }, [tableTitle]);
 
     return {state, roller};
 };

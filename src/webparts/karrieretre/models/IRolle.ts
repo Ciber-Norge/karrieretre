@@ -1,14 +1,14 @@
 export interface IRolle {
     Id: number;
-    Kluster: string | null;
-    Kontaktperson: string | null;
+    Kluster: string | undefined;
+    Kontaktperson: string | undefined;
     Modified: string; // "2022-01-12T21:37:03Z"
-    Oppdatertav: string | null;
-    Personligeegenskaper: string | null;
-    Rollebeskrivelse: string | null;
-    Formellkompetanse: string | null;
-    Erfaring: string | null;
-    Sistoppdatert: string | null;
-    Title: string | null;
-    Akse: string | null;
+    Oppdatertav: string | undefined;
+    Personligeegenskaper: string | undefined;
+    Rollebeskrivelse: string | undefined;
+    Formellkompetanse: string | undefined;
+    Erfaring: string | undefined;
+    Sistoppdatert: string | undefined;
+    Title: string | undefined;
+    Akse: string | undefined;
 }

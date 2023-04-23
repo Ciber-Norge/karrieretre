@@ -1,11 +1,10 @@
 .tooltip {
-  position: relative;
-  display: inline-block;
-  width: 100%;
+  z-index: 1;
+  cursor: default;
 }
 
 /* Tooltip text */
-.tooltip .tooltipContent {
+.tooltipContent {
   background-color: white;
   text-align: center;
   padding: 5px 0;
@@ -13,30 +12,8 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
 
   /* Position the tooltip text - see examples below! */
-  position: absolute;
-  z-index: 100;
   border-width: 3px;
   border-style: solid;
-}
-
-.left {
-  top: -75px;
-  right: 105%;
-}
-
-.right {
-  top: -75px;
-  left: 105%;
-}
-
-.rightTop {
-  top: -300px;
-  left: 105%;
-}
-
-.leftTop {
-  top: -300px;
-  right: 105%;
 }
 
 .green {
@@ -62,12 +39,4 @@
 .grey {
   border-color: var(--color-grey-dark);
   color: var(--color-grey-dark);
-}
-
-/* Show the tooltip text when you mouse over the tooltip container */
-.close {
-  visibility: hidden;
-}
-.open {
-  visibility: visible;
 }

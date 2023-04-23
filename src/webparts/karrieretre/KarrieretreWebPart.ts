@@ -7,22 +7,27 @@ import {
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import "./colors.module.scss";
-import * as strings from 'KarrieretreWebPartStrings';
 import {Karrieretre} from "./components/Karrieretre";
+import "./index.css"
+import {PageContext, SPPermission} from "@microsoft/sp-page-context";
 
 export interface IKarrieretreWebPartProps {
-  description: string;
+  avdelinger: string;
+  tableTitle: string
+  cssOptions: string
 }
 
 export default class KarrieretreWebPart extends BaseClientSideWebPart<IKarrieretreWebPartProps> {
-
   public render(): void {
     const element = React.createElement(
       Karrieretre,
       {
-        description: this.properties.description,
+        avdelingerString: this.properties.avdelinger,
+        tableTitle: this.properties.tableTitle,
         spHttpClient: this.context.spHttpClient,
-        absoluteUrl: this.context.pageContext.web.absoluteUrl
+        absoluteUrl: this.context.pageContext.web.absoluteUrl,
+        cssOptions: this.properties.cssOptions.split(",").map(v=>v.trim()),
+        hasEditPermission: checkEditorPermission(this.context.pageContext)
       }
     );
 
@@ -42,15 +47,24 @@ export default class KarrieretreWebPart extends BaseClientSideWebPart<IKarrieret
       pages: [
         {
           header: {
-            description: strings.PropertyPaneDescription
+            description: "Sharepoint app som viser informasjon om roller"
           },
           groups: [
             {
-              groupName: strings.BasicGroupName,
               groupFields: [
-                PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
-                })
+                PropertyPaneTextField('tableTitle', {
+                  label: "Navn på tabell",
+                  description: "Tabellen som løsningen henter roller fra.",
+                }),
+                PropertyPaneTextField('cssOptions', {
+                  label: "Css alternativer",
+                }),
+                PropertyPaneTextField('avdelinger', {
+                  label: "Lim inn innstillinger",
+                  description: "Etter du er ferdig med redigering kan du trykke 'Avslutt redigering og kopier'.",
+                  multiline: true
+                }),
+
               ]
             }
           ]
@@ -58,4 +72,11 @@ export default class KarrieretreWebPart extends BaseClientSideWebPart<IKarrieret
       ]
     };
   }
+}
+
+function checkEditorPermission(pageContext: PageContext){
+  //Editor group can add item on list/library via addListItems permission
+  const permission = new SPPermission(pageContext.web.permissions.value);
+  const isMemberPermission = permission.hasPermission(SPPermission.addListItems);
+  return isMemberPermission;
 }
