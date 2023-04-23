@@ -7,7 +7,6 @@ import {
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import "./colors.module.scss";
-import * as strings from 'KarrieretreWebPartStrings';
 import {Karrieretre} from "./components/Karrieretre";
 import "./index.css"
 import {PageContext, SPPermission} from "@microsoft/sp-page-context";
@@ -48,20 +47,21 @@ export default class KarrieretreWebPart extends BaseClientSideWebPart<IKarrieret
       pages: [
         {
           header: {
-            description: strings.PropertyPaneDescription
+            description: "Sharepoint app som viser informasjon om roller"
           },
           groups: [
             {
-              groupName: strings.BasicGroupName,
               groupFields: [
                 PropertyPaneTextField('tableTitle', {
-                  label: "Navn på tabell"
+                  label: "Navn på tabell",
+                  description: "Tabellen som løsningen henter roller fra.",
                 }),
                 PropertyPaneTextField('cssOptions', {
                   label: "Css alternativer",
                 }),
                 PropertyPaneTextField('avdelinger', {
-                  label: "Innstillinger",
+                  label: "Lim inn innstillinger",
+                  description: "Etter du er ferdig med redigering kan du trykke 'Avslutt redigering og kopier'.",
                   multiline: true
                 }),
 

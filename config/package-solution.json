@@ -3,7 +3,7 @@
   "solution": {
     "name": "karrieretre-client-side-solution",
     "id": "944b52c5-531e-4716-a364-c90c2fbde661",
-    "version": "1.0.0.2",
+    "version": "1.0.0.3",
     "includeClientSideAssets": true,
     "isDomainIsolated": false,
     "developer": {

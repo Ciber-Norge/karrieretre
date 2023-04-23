@@ -51,7 +51,7 @@ export const TableFagfelt = ({fagfelter, avdelinger, setAvdelinger, avdelingsTit
                 }));
             };
             return <tr key={fagfeltTittel}>
-                <td width="100%"><Typography variant="body1">{fagfeltTittel}: </Typography></td>
+                <td width="100%"><Typography variant="body1">{fagfeltTittel}</Typography></td>
                 <td>
                     <input value={options[attribute as keyof CSSProperties] || ""}
                            onChange={(e) => addAttribute(e.target.value)}/>

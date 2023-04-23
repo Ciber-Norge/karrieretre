@@ -15,10 +15,12 @@ type EditAvdelingerProps = {
 
 export const EditAvdelinger = ({avdelinger, setAvdelinger, roller, cssOptions}: EditAvdelingerProps) => {
 
-    return <div className={styles.container}>
+    return <>
         <Typography variant={"h2"} className="mb-1">Avdelinger</Typography>
+        <div className={styles.container}>
 
-        {avdelinger.map(({avdelingsTittel, fagfelter}) => {
+
+        {avdelinger.map(({avdelingsTittel, fagfelter, color}) => {
 
             const handleAddFagfelt = (fagfeltTittel: string) => {
                 setAvdelinger(avdelinger.map(avdeling => {
@@ -31,7 +33,7 @@ export const EditAvdelinger = ({avdelinger, setAvdelinger, roller, cssOptions}: 
             const fagfeltOptions = getAvailableFagfelt(roller, avdelingsTittel, fagfelter.map(f => f.fagfeltTittel));
 
             return (<div key={avdelingsTittel}
-                         className={styles.paddingContainer}>
+                         className={`${styles.paddingContainer} ${styles[color]}`}>
                 <Typography variant={"h3"}>{avdelingsTittel}</Typography>
                 {fagfeltOptions.length > 0 && <AddFagfelt onAddFagfelt={handleAddFagfelt}
                                                           options={fagfeltOptions}/>}
@@ -43,5 +45,5 @@ export const EditAvdelinger = ({avdelinger, setAvdelinger, roller, cssOptions}: 
             </div>);
         })}
 
-    </div>;
+    </div></>;
 };
