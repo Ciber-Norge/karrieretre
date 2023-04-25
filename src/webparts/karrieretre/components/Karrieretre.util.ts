@@ -113,7 +113,7 @@ export const getAvdelinger = (avdelingerString: string): IAvdelinger[] => {
 export const filtrerRoller = (roller: IRolle[], avdeling: AvdelingsType, fagfelt?: FagfeltType): IRolle[] => {
     return roller.filter((rolle) => {
         if (!fagfelt) {
-            return rolle.Kluster.toUpperCase() === avdeling.toUpperCase();
+            return rolle.Kluster?.toUpperCase() === avdeling?.toUpperCase();
         }
         return rolle.Kluster.toUpperCase() === avdeling.toUpperCase() && rolle.Akse.toUpperCase() === fagfelt.toUpperCase();
     });
