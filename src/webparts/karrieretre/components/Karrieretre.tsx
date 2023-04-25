@@ -6,9 +6,8 @@ import {useRolleTabell} from "../rest/useRolleTabell";
 import {Tittel} from "./tittel/Tittel";
 import {FagfeltSirkel} from "./fagfelt-sirkel/FagfeltSirkel";
 import styles from "./Karrieretre.module.scss";
-import {Stige} from "./stiger/Stige";
 import {Button} from "./button/Button";
-import {filtrerRoller, getAvdelinger, IAvdelinger} from "./Karrieretre.util";
+import {filtrerRoller, getAvailableAvdelinger, getAvdelinger, IAvdelinger} from "./Karrieretre.util";
 import {IPosisjon} from "../models/IPosisjon";
 import {EditAvdelinger} from "./edit-avdelinger/EditAvdelinger";
 
@@ -55,14 +54,20 @@ export const Karrieretre = ({
         setAvdelinger(avdelinger.map(a => ({...a, fagfelter: a.fagfelter.map(f => ({...f, options: {}}))})));
     };
 
+    const handleSyncAvdelinger = () => {
+        const availableAvdelinger = getAvailableAvdelinger(roller)
+        setAvdelinger(availableAvdelinger.map(avdelingsTittel => ({
+            color: "green",
+            avdelingsTittel,
+            fagfelter: [],
+            titlePosisjon: {x: 0, y: 0}
+        })));
+    }
+
 
     return <>
         <div className={styles.treeContainer}>
             <SvgTre/>
-            <Stige variant={"1"} style={{position: "absolute", top: "52%", left: "71%"}}/>
-            <Stige variant={"2"} style={{position: "absolute", top: "58%", left: "47%"}}/>
-            <Stige variant={"3"} style={{position: "absolute", top: "4%", left: "52%"}}/>
-            <Stige variant={"4"} style={{position: "absolute", top: "26%", left: "20%"}}/>
 
             {avdelinger.map(({color, titlePosisjon, avdelingsTittel, fagfelter}) => {
                 const handleTitleDragEnd = (position: IPosisjon) => {
@@ -104,12 +109,14 @@ export const Karrieretre = ({
 
 
         </div>
-            {editMode && <EditAvdelinger roller={roller} avdelinger={avdelinger} setAvdelinger={setAvdelinger}
-                                         cssOptions={cssOptions}/>}
-            <div className={styles.buttonContainer}>
-                {hasEditPermission && <Button onClick={handleEditButtonClick}>{editMode ? "Avslutt redigering og kopier" : "Rediger"}</Button>}
-                {editMode && <Button onClick={handleResetCss}>Nullstill css</Button>}
-            </div>
+        {editMode && <EditAvdelinger roller={roller} avdelinger={avdelinger} setAvdelinger={setAvdelinger}
+                                     cssOptions={cssOptions}/>}
+        <div className={styles.buttonContainer}>
+            {hasEditPermission && <Button
+                onClick={handleEditButtonClick}>{editMode ? "Avslutt redigering og kopier" : "Rediger"}</Button>}
+            {editMode && <Button onClick={handleResetCss}>Nullstill css</Button>}
+            {editMode && <Button onClick={handleSyncAvdelinger}>Synkroniser avdelinger med tabell</Button>}
+        </div>
 
     </>;
 };

@@ -11,11 +11,13 @@
 
 
 ## Local development
+Install nodejs 16
 
 - Clone this repository
 - Ensure that you are at the solution folder
 - in the command-line run:
   - ``npm install``
+  - ``npm run trust`` (First time only)
   - ``npm run start-dev``
   - Go to https://manpowergroupapps.sharepoint.com/sites/NO-xeek/_layouts/15/workbench.aspx
 

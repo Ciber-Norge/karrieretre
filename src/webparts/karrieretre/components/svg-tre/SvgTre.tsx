@@ -1,145 +1,217 @@
 import * as React from 'react';
-import styles from './SvgTre.module.scss';
+import styles from "./SvgTre.module.scss"; 
 
-type SvgTreProps = {
+type SvgTreProps = {};
 
-};
-
-export const SvgTre = (props: SvgTreProps)=>{
-    return <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 929.15 862.78">
-        <g id="Layer_6" data-name="Layer 6">
+export const SvgTre = (props: SvgTreProps) => {
+    return <svg id="Layer_37" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1032.98 1027.98">
+        <g id="Layer_6_copy">
             <path className={styles["cls-1"]}
-                  d="M2634.55,997h0c11.74-65.66,13.19-77.65,13.19-77.65,4.88-40.52,8.1-67,0-96.83-11-40.4-36.69-65.95-85.51-114.42a597.23,597.23,0,0,0-54.07-47.78c-65.73-50.94-121.82-71.72-121.64-72.09s79.27,24.54,163.14,89.69a591.86,591.86,0,0,1,111.91,114.43,579.21,579.21,0,0,0-25.15-80.48c-5.27-13.36-10.8-25.91-16.42-37.65a39.16,39.16,0,0,1,5.62,5.82,68.31,68.31,0,0,1,4.81,6.58c3.21,5.08,20.46,35.28,43.71,76.81A1094.35,1094.35,0,0,1,2707,470.21a1882.11,1882.11,0,0,0-19.88,300.56,418.87,418.87,0,0,1,143.31-196.59A440,440,0,0,0,2734.83,702c-34.84,70.72-41.71,133-45.6,172a574.41,574.41,0,0,0,1,122.92Z"
-                  transform="translate(-2201 -134.22)"/>
+                  d="m663.48,689.18c-42.44,48.61-90.29,117.52-94.48,116.82-8.91-1.02,33.78-362.04,42.69-361.02-12.77,41.07-66.43,43.92-75.25,92.58-15.44,85.21-1.53,253.35-4.44,253.44s-38.43-65.05-43.36-71.36c-3.42-4.38-1.8-13.75-1.8-13.75-2.6-2.63-5.42-5.1-8.63-7.24,8.63,14.6,4.71,30.21,12.79,46.81,13.03,26.78,30.14,44.88,36.62,62.54,2.16,5.89,3.13,27,2.38,28-3,4-79.94-82.53-159.69-132.75-128.64-81.01-113.44-112.06-113.77-111.52-.28.46-50.7,26.29,50.12,89.63,10.19,6.4,35.37,16.73,75.02,48.64,74.87,60.27,136.82,101.11,139.07,153.05s-2.22,75.43-20.22,113.95h85.37c-5.39-17.82-16.46-102.22-12.68-148s64.44-90,99.78-115.76c46.17-75.98,86.82-128.01,128-158.99-38.37,23.48-90.07,60.57-137.52,114.93Z"/>
         </g>
-        <g id="SALG">
-            <g id="Layer_5" data-name="Layer 5">
-                <ellipse className={styles["cls-2"]} cx="2805.14" cy="655.57" rx="120.87" ry="128.82"
-                         transform="translate(-1445.9 2545.18) rotate(-57.79)"/>
-                <ellipse className={styles["cls-2"]} cx="2669.79" cy="671.55" rx="62.73" ry="66.86"
-                         transform="translate(-1522.62 2438.14) rotate(-57.79)"/>
-                <ellipse className={styles["cls-2"]} cx="2719.8" cy="549.36" rx="70.38" ry="75.01"
-                         transform="translate(-1395.88 2423.39) rotate(-57.79)"/>
-                <ellipse className={styles["cls-2"]} cx="2798.29" cy="536.43" rx="52.78" ry="56.26"
-                         transform="translate(-1348.29 2483.77) rotate(-57.79)"/>
-                <ellipse className={styles["cls-2"]} cx="2953.85" cy="584.72" rx="61.2" ry="65.22"
-                         transform="translate(-1316.51 2637.93) rotate(-57.79)"/>
-                <ellipse className={styles["cls-2"]} cx="2913.85" cy="734.04" rx="87.99" ry="81.63"
-                         transform="translate(-1461.53 2673.8) rotate(-57.79)"/>
-                <ellipse className={styles["cls-2"]} cx="2821.73" cy="794.41" rx="62.73" ry="66.86"
-                         transform="translate(-1555.62 2624.05) rotate(-57.79)"/>
-                <ellipse className={styles["cls-2"]} cx="2725.12" cy="768.8" rx="63.49" ry="67.67"
-                         transform="translate(-1579.06 2530.35) rotate(-57.79)"/>
-                <ellipse className={styles["cls-2"]} cx="2869.42" cy="530.61" rx="65.02" ry="69.3"
-                         transform="translate(-1310.16 2541.22) rotate(-57.79)"/>
-                <ellipse className={styles["cls-2"]} cx="2654.69" cy="591.52" rx="58.14" ry="61.96"
-                         transform="matrix(0.53, -0.85, 0.85, 0.53, -1461.95, 2387.99)"/>
-                <ellipse className={styles["cls-2"]} cx="2670.81" cy="741.82" rx="35.95" ry="38.32"
-                         transform="translate(-1581.59 2471.81) rotate(-57.79)"/>
-                <ellipse className={styles["cls-2"]} cx="2794.79" cy="505.29" rx="52.78" ry="56.26"
-                         transform="translate(-1323.58 2466.26) rotate(-57.79)"/>
-                <ellipse className={styles["cls-2"]} cx="2984.1" cy="669.77" rx="66.55" ry="70.93"
-                         transform="translate(-1374.36 2703.23) rotate(-57.79)"/>
+        <g id="SALG_copy">
+            <g id="Layer_5_copy">
+                <ellipse className={styles["cls-3"]} cx="671.14" cy="612.57" rx="120.87" ry="128.82"
+                         transform="translate(-204.91 853.84) rotate(-57.79)"/>
+                <ellipse className={styles["cls-3"]} cx="535.79" cy="628.55" rx="62.73" ry="66.86"
+                         transform="translate(-281.63 746.79) rotate(-57.79)"/>
+                <ellipse className={styles["cls-3"]} cx="585.8" cy="506.36" rx="70.38" ry="75.01"
+                         transform="translate(-154.89 732.05) rotate(-57.79)"/>
+                <ellipse className={styles["cls-3"]} cx="664.29" cy="493.43" rx="52.78" ry="56.26"
+                         transform="translate(-107.3 792.42) rotate(-57.79)"/>
+                <ellipse className={styles["cls-3"]} cx="819.85" cy="541.72" rx="61.2" ry="65.22"
+                         transform="translate(-75.52 946.58) rotate(-57.79)"/>
+                <ellipse className={styles["cls-3"]} cx="779.85" cy="691.04" rx="87.99" ry="81.63"
+                         transform="translate(-220.54 982.45) rotate(-57.79)"/>
+                <ellipse className={styles["cls-3"]} cx="687.73" cy="751.41" rx="62.73" ry="66.86"
+                         transform="translate(-314.63 932.7) rotate(-57.79)"/>
+                <ellipse className={styles["cls-3"]} cx="591.12" cy="725.8" rx="63.49" ry="67.67"
+                         transform="translate(-338.07 839.01) rotate(-57.79)"/>
+                <ellipse className={styles["cls-3"]} cx="735.42" cy="487.61" rx="65.02" ry="69.3"
+                         transform="translate(-69.17 849.88) rotate(-57.79)"/>
+                <ellipse className={styles["cls-3"]} cx="520.69" cy="548.52" rx="58.14" ry="61.96"
+                         transform="translate(-220.96 696.64) rotate(-57.79)"/>
+                <ellipse className={styles["cls-3"]} cx="536.81" cy="698.82" rx="35.95" ry="38.32"
+                         transform="translate(-340.6 780.46) rotate(-57.79)"/>
+                <ellipse className={styles["cls-3"]} cx="660.79" cy="462.29" rx="52.78" ry="56.26"
+                         transform="translate(-82.59 774.91) rotate(-57.79)"/>
+                <ellipse className={styles["cls-3"]} cx="850.1" cy="626.77" rx="66.55" ry="70.93"
+                         transform="translate(-133.37 1011.88) rotate(-57.79)"/>
             </g>
         </g>
-        <g id="LEDELSE">
-            <g id="Layer_2" data-name="Layer 2">
-                <ellipse className={styles["cls-3"]} cx="2422.09" cy="732.28" rx="72.91" ry="72.5"
-                         transform="translate(-2308.63 655.26) rotate(-18.12)"/>
-                <ellipse className={styles["cls-3"]} cx="2605.35" cy="741.8" rx="69.59" ry="69.21"
-                         transform="translate(-2302.51 712.72) rotate(-18.12)"/>
-                <ellipse className={styles["cls-3"]} cx="2570.51" cy="523.61" rx="66.94" ry="66.57"
-                         transform="matrix(0.95, -0.31, 0.31, 0.95, -2236.38, 691.06)"/>
-                <ellipse className={styles["cls-3"]} cx="2496.25" cy="501.66" rx="44.41" ry="44.16"
-                         transform="translate(-2233.24 666.88) rotate(-18.12)"/>
-                <ellipse className={styles["cls-3"]} cx="2519" cy="763.5" rx="70.7" ry="60.48"
-                         transform="translate(-2313.53 686.94) rotate(-18.12)"/>
-                <ellipse className={styles["cls-3"]} cx="2638.33" cy="650.19" rx="74.23" ry="73.82"
-                         transform="translate(-2272.38 718.43) rotate(-18.12)"/>
-                <ellipse className={styles["cls-3"]} cx="2501.11" cy="663.99" rx="66.28" ry="65.91"
-                         transform="translate(-2283.48 676.45) rotate(-18.12)"/>
-                <ellipse className={styles["cls-3"]} cx="2577.55" cy="616.81" rx="83.51" ry="83.05"
-                         transform="translate(-2265.02 697.88) rotate(-18.12)"/>
-                <ellipse className={styles["cls-3"]} cx="2360.94" cy="664.08" rx="51.7" ry="51.41"
-                         transform="translate(-2290.45 632.86) rotate(-18.12)"/>
-                <ellipse className={styles["cls-3"]} cx="2653.98" cy="569.64" rx="49.05" ry="48.77"
-                         transform="translate(-2246.56 719.31) rotate(-18.12)"/>
-                <ellipse className={styles["cls-3"]} cx="2396.21" cy="588.15" rx="72.91" ry="72.5"
-                         transform="translate(-2265.09 640.07) rotate(-18.12)"/>
-                <ellipse className={styles["cls-3"]} cx="2422.76" cy="517.29" rx="49.05" ry="48.77"
-                         transform="translate(-2241.74 644.81) rotate(-18.12)"/>
-                <ellipse className={styles["cls-3"]} cx="2426.17" cy="637.42" rx="60.31" ry="59.98"
-                         transform="translate(-2278.93 651.83) rotate(-18.12)"/>
-                <ellipse className={styles["cls-3"]} cx="2483.18" cy="561.09" rx="60.31" ry="59.98"
-                         transform="translate(-2252.37 665.77) rotate(-18.12)"/>
-                <text x="-2201" y="-134.22"/>
+        <g id="LEDELSE_copy">
+            <g id="Layer_2_copy">
+                <ellipse className={styles["cls-6"]} cx="243.7" cy="711.36" rx="87.65" ry="84.94"
+                         transform="translate(-37.16 13.84) rotate(-3.02)"/>
+                <ellipse className={styles["cls-6"]} cx="464.1" cy="722.52" rx="83.66" ry="81.08"
+                         transform="translate(-37.44 25.47) rotate(-3.02)"/>
+                <ellipse className={styles["cls-6"]} cx="422.19" cy="467" rx="80.47" ry="77.99"
+                         transform="translate(-24.03 22.91) rotate(-3.02)"/>
+                <ellipse className={styles["cls-6"]} cx="332.88" cy="441.29" rx="53.38" ry="51.74"
+                         transform="translate(-22.8 18.16) rotate(-3.02)"/>
+                <ellipse className={styles["cls-6"]} cx="360.25" cy="747.92" rx="84.84" ry="70.99"
+                         transform="translate(-187.41 124.03) rotate(-15.56)"/>
+                <ellipse className={styles["cls-6"]} cx="503.76" cy="615.24" rx="89.24" ry="86.48"
+                         transform="translate(-31.73 27.41) rotate(-3.02)"/>
+                <ellipse className={styles["cls-6"]} cx="338.73" cy="631.39" rx="79.68" ry="77.22"
+                         transform="translate(-32.81 18.74) rotate(-3.02)"/>
+                <ellipse className={styles["cls-6"]} cx="430.66" cy="576.15" rx="100.39" ry="97.3"
+                         transform="translate(-29.77 23.5) rotate(-3.02)"/>
+                <ellipse className={styles["cls-6"]} cx="170.15" cy="631.5" rx="62.15" ry="60.23"
+                         transform="translate(-33.05 9.85) rotate(-3.02)"/>
+                <ellipse className={styles["cls-6"]} cx="522.59" cy="520.91" rx="58.96" ry="57.14"
+                         transform="translate(-26.73 28.27) rotate(-3.02)"/>
+                <ellipse className={styles["cls-6"]} cx="212.57" cy="542.58" rx="87.65" ry="84.94"
+                         transform="translate(-28.31 11.96) rotate(-3.02)"/>
+                <ellipse className={styles["cls-6"]} cx="244.5" cy="459.6" rx="58.96" ry="57.14"
+                         transform="translate(-23.89 13.53) rotate(-3.02)"/>
+                <ellipse className={styles["cls-6"]} cx="248.61" cy="600.28" rx="72.51" ry="70.27"
+                         transform="translate(-31.3 13.94) rotate(-3.02)"/>
+                <ellipse className={styles["cls-6"]} cx="317.16" cy="510.89" rx="72.51" ry="70.27"
+                         transform="translate(-26.49 17.43) rotate(-3.02)"/>
             </g>
         </g>
-        <g id="TEKNISK">
-            <g id="Layer_3" data-name="Layer 3">
-                <ellipse className={styles["cls-4"]} cx="163.06" cy="207.95" rx="61.75" ry="58.9"/>
-                <ellipse className={styles["cls-4"]} cx="224.84" cy="99.32" rx="82.83" ry="79.01"/>
-                <ellipse className={styles["cls-4"]} cx="146.68" cy="163.56" rx="84.33" ry="80.45"/>
-                <ellipse className={styles["cls-4"]} cx="189.15" cy="332.97" rx="94.12" ry="89.78"/>
-                <ellipse className={styles["cls-4"]} cx="346.89" cy="186.24" rx="105.42" ry="100.56"/>
-                <ellipse className={styles["cls-4"]} cx="339.69" cy="271.04" rx="84.33" ry="80.45"/>
-                <ellipse className={styles["cls-4"]} cx="315.91" cy="93.64" rx="77.56" ry="73.98"/>
-                <ellipse className={styles["cls-4"]} cx="420.91" cy="72.55" rx="76.05" ry="72.55"/>
-                <ellipse className={styles["cls-4"]} cx="491.65" cy="342.84" rx="57.23" ry="54.59"/>
-                <ellipse className={styles["cls-4"]} cx="379.58" cy="332.92" rx="94.88" ry="90.5"/>
-                <ellipse className={styles["cls-4"]} cx="275.79" cy="357.48" rx="82.08" ry="78.29"/>
-                <ellipse className={styles["cls-4"]} cx="99.79" cy="316.74" rx="66.26" ry="63.21"/>
-                <ellipse className={styles["cls-4"]} cx="100.77" cy="233.93" rx="62.77" ry="68.15"/>
-                <ellipse className={styles["cls-4"]} cx="497.29" cy="97.35" rx="88.29" ry="88.43"/>
-                <ellipse className={styles["cls-4"]} cx="2757.19" cy="325.42" rx="69.99" ry="51.03"
-                         transform="translate(-2219.9 155.06) rotate(-5.99)"/>
-                <ellipse className={styles["cls-4"]} cx="552.71" cy="281.35" rx="68.52" ry="65.36"/>
-                <ellipse className={styles["cls-4"]} cx="435.72" cy="251.02" rx="90.36" ry="86.19"/>
-                <ellipse className={styles["cls-4"]} cx="247.61" cy="263.1" rx="115.96" ry="110.61"/>
+        <g id="TEKNISK_copy">
+            <g id="Layer_3_copy">
+                <ellipse className={styles["cls-5"]} cx="189.02" cy="270.82" rx="67.22" ry="66.23"/>
+                <ellipse className={styles["cls-5"]} cx="256.28" cy="148.68" rx="90.17" ry="88.84"/>
+                <ellipse className={styles["cls-5"]} cx="171.19" cy="220.91" rx="91.81" ry="90.46"/>
+                <ellipse className={styles["cls-5"]} cx="217.43" cy="411.4" rx="102.47" ry="100.96"/>
+                <ellipse className={styles["cls-5"]} cx="389.15" cy="246.41" rx="114.76" ry="113.07"/>
+                <ellipse className={styles["cls-5"]} cx="381.31" cy="341.77" rx="91.81" ry="90.46"/>
+                <ellipse className={styles["cls-5"]} cx="355.42" cy="142.29" rx="84.43" ry="83.19"/>
+                <ellipse className={styles["cls-5"]} cx="469.73" cy="118.58" rx="82.79" ry="81.57"/>
+                <ellipse className={styles["cls-5"]} cx="546.74" cy="422.5" rx="62.3" ry="61.38"/>
+                <ellipse className={styles["cls-5"]} cx="424.74" cy="411.34" rx="103.29" ry="101.76"/>
+                <ellipse className={styles["cls-5"]} cx="311.75" cy="438.96" rx="89.35" ry="88.03"/>
+                <ellipse className={styles["cls-5"]} cx="120.14" cy="393.15" rx="72.14" ry="71.07"/>
+                <ellipse className={styles["cls-5"]} cx="121.21" cy="300.04" rx="68.33" ry="76.63"/>
+                <ellipse className={styles["cls-5"]} cx="552.88" cy="146.46" rx="96.11" ry="99.43"/>
+                <ellipse className={styles["cls-5"]} cx="617" cy="251.99" rx="76.22" ry="57.35"
+                         transform="translate(-25.13 73.51) rotate(-6.68)"/>
+                <ellipse className={styles["cls-5"]} cx="613.22" cy="353.36" rx="74.6" ry="73.5"/>
+                <ellipse className={styles["cls-5"]} cx="485.86" cy="319.25" rx="98.37" ry="96.92"/>
+                <ellipse className={styles["cls-5"]} cx="281.07" cy="332.84" rx="126.24" ry="124.38"/>
             </g>
         </g>
-        <g id="Layer_29" data-name="Layer 29">
-            <g id="Grein_DW" data-name="Grein DW">
-                <g id="BLADER">
-                    <ellipse className={styles["cls-5"]} cx="194.37" cy="385.53" rx="68.66" ry="71.79"/>
-                    <ellipse className={styles["cls-5"]} cx="119.56" cy="405.91" rx="95.3" ry="70.86"/>
-                    <ellipse className={styles["cls-5"]} cx="2293.27" cy="447.97" rx="92.36" ry="83.85"
-                             transform="translate(-2236.25 119.46) rotate(-6.28)"/>
-                    <ellipse className={styles["cls-5"]} cx="166.46" cy="336.44" rx="71.81" ry="69.94"/>
+        <g id="Layer_29_copy">
+            <g id="Grein_DW_copy">
+                <g id="BLADER_copy">
+                    <ellipse className={styles["cls-2"]} cx="198.37" cy="509.76" rx="68.66" ry="71.79"/>
+                    <ellipse className={styles["cls-2"]} cx="143.56" cy="531.14" rx="95.3" ry="70.86"/>
+                    <ellipse className={styles["cls-2"]} cx="116.27" cy="438.97" rx="92.36" ry="83.85"
+                             transform="translate(-47.35 15.36) rotate(-6.28)"/>
+                    <ellipse className={styles["cls-2"]} cx="190.46" cy="461.66" rx="71.81" ry="69.94"/>
                 </g>
             </g>
         </g>
-        <g id="RÅDGIVNING">
-            <g id="Layer_1" data-name="Layer 1">
-                <ellipse className={styles["cls-6"]} cx="2778.22" cy="381.1" rx="104.13" ry="92.37"
-                         transform="translate(-401.63 2874.73) rotate(-77.38)"/>
-                <ellipse className={styles["cls-6"]} cx="2873.01" cy="252.06" rx="79.65" ry="79.33"
-                         transform="translate(-201.63 2866.38) rotate(-77.38)"/>
-                <ellipse className={styles["cls-6"]} cx="2734.55" cy="316.45" rx="84.79" ry="75.21"
-                         transform="translate(-372.67 2781.58) rotate(-77.38)"/>
-                <ellipse className={styles["cls-6"]} cx="2966.31" cy="298.97" rx="85.53" ry="75.87"
-                         transform="translate(-174.49 2994.09) rotate(-77.38)"/>
-                <ellipse className={styles["cls-6"]} cx="3035.81" cy="332.82" rx="85.53" ry="75.87"
-                         transform="translate(-153.21 3088.36) rotate(-77.38)"/>
-                <ellipse className={styles["cls-6"]} cx="2778.35" cy="214.16" rx="49.68" ry="53.5"
-                         transform="translate(-238.63 2744.39) rotate(-77.38)"/>
-                <ellipse className={styles["cls-6"]} cx="2683.04" cy="386.47" rx="61.73" ry="54.76"
-                         transform="translate(-481.26 2786.04) rotate(-77.38)"/>
-                <ellipse className={styles["cls-6"]} cx="3077.91" cy="374.26" rx="54.3" ry="52.12"
-                         transform="translate(-160.74 3161.84) rotate(-77.38)"/>
-                <ellipse className={styles["cls-6"]} cx="2877.73" cy="386.61" rx="135.37" ry="116.78"
-                         transform="translate(-329.24 2976.14) rotate(-77.38)"/>
-                <ellipse className={styles["cls-6"]} cx="2997.48" cy="491.93" rx="95.95" ry="85.11"
-                         transform="translate(-338.43 3175.3) rotate(-77.38)"/>
-                <ellipse className={styles["cls-6"]} cx="3088.73" cy="440.71" rx="43.88" ry="38.93"
-                         transform="translate(-217.13 3224.32) rotate(-77.38)"/>
-                <ellipse className={styles["cls-6"]} cx="2744.72" cy="500.24" rx="99.33" ry="104.5"
-                         transform="translate(-544.08 2935.15) rotate(-77.38)"/>
-                <ellipse className={styles["cls-6"]} cx="2843.98" cy="510.15" rx="120.49" ry="106.88"
-                         transform="translate(-476.17 3039.76) rotate(-77.38)"/>
-                <ellipse className={styles["cls-6"]} cx="2939.18" cy="574.15" rx="65.45" ry="58.06"
-                         transform="translate(-464.22 3182.67) rotate(-77.38)"/>
+        <g id="RÅDGIVNING_copy">
+            <g id="Layer_1_copy">
+                <ellipse className={styles["cls-4"]} cx="604.62" cy="313.86" rx="120.64" ry="105.19"
+                         transform="translate(166.25 835.3) rotate(-77.38)"/>
+                <ellipse className={styles["cls-4"]} cx="713.2" cy="164.08" rx="92.29" ry="90.34"
+                         transform="translate(397.27 824.2) rotate(-77.38)"/>
+                <ellipse className={styles["cls-4"]} cx="555.12" cy="239.2" rx="98.24" ry="85.65"
+                         transform="translate(200.42 728.65) rotate(-77.38)"/>
+                <ellipse className={styles["cls-4"]} cx="819.34" cy="217.99" rx="99.1" ry="86.41"
+                         transform="translate(427.61 969.91) rotate(-77.38)"/>
+                <ellipse className={styles["cls-4"]} cx="898.41" cy="256.89" rx="99.1" ry="86.41"
+                         transform="translate(451.45 1077.47) rotate(-77.38)"/>
+                <ellipse className={styles["cls-4"]} cx="605.47" cy="120.61" rx="57.56" ry="60.92"
+                         transform="translate(355.5 685.1) rotate(-77.38)"/>
+                <ellipse className={styles["cls-4"]} cx="496.12" cy="320.48" rx="71.52" ry="62.36"
+                         transform="translate(75 734.59) rotate(-77.38)"/>
+                <ellipse className={styles["cls-4"]} cx="946.22" cy="304.68" rx="62.91" ry="59.36"
+                         transform="translate(442.18 1161.48) rotate(-77.38)"/>
+                <ellipse className={styles["cls-4"]} cx="718.01" cy="319.82" rx="156.84" ry="132.99"
+                         transform="translate(249.05 950.61) rotate(-77.38)"/>
+                <ellipse className={styles["cls-4"]} cx="860.38" cy="447.79" rx="116.18" ry="104.53"
+                         transform="translate(235.44 1189.56) rotate(-77.38)"/>
+                <ellipse className={styles["cls-4"]} cx="958.27" cy="381.56" rx="50.84" ry="44.33"
+                         transform="translate(376.58 1233.32) rotate(-77.38)"/>
+                <ellipse className={styles["cls-4"]} cx="565.94" cy="451.92" rx="115.08" ry="119.01"
+                         transform="translate(1.29 905.46) rotate(-77.38)"/>
+                <ellipse className={styles["cls-4"]} cx="556.8" cy="456.59" rx="115.08" ry="119.01"
+                         transform="translate(-10.4 900.19) rotate(-77.38)"/>
+                <ellipse className={styles["cls-4"]} cx="679.03" cy="462.98" rx="139.6" ry="121.72"
+                         transform="translate(78.88 1024.46) rotate(-77.38)"/>
+                <ellipse className={styles["cls-4"]} cx="787.26" cy="536.66" rx="75.83" ry="66.12"
+                         transform="translate(91.57 1187.66) rotate(-77.38)"/>
             </g>
         </g>
-    </svg>;
+        <g id="Layer_21_copy">
+            <path className={styles["cls-7"]}
+                  d="m231.61,426.48c-5.57,21.06-4.65,43.99,3.77,64.18,7.65,18.34,21.19,33.61,38.32,43.66,9.52,5.59,20.03,9.53,30.88,11.63,1.59.31,3.24-.45,3.69-2.1.4-1.47-.5-3.38-2.1-3.69-18.09-3.49-34.96-12.21-47.86-25.4-13.55-13.85-21.79-32.29-23.73-51.6-1.18-11.78-.2-23.66,2.82-35.09.99-3.74-4.8-5.33-5.79-1.6h0Z"/>
+            <path className={styles["cls-7"]}
+                  d="m255.56,422.87c-4.96,16.41-5.04,34.92.45,51.19,4.04,11.98,11.13,22.93,20.57,31.36,7.25,6.48,15.66,11.42,24.71,14.93,5.63,2.18,11.51,3.79,17.49,4.65,1.6.23,3.22-.39,3.69-2.1.39-1.41-.48-3.46-2.1-3.69-4.86-.7-9.65-1.9-14.3-3.49-.83-.28-1.65-.58-2.47-.89-.45-.17-.89-.34-1.34-.52-.21-.08-.41-.16-.62-.25-.1-.04-1.12-.47-.53-.22-1.93-.82-3.82-1.71-5.68-2.68-2.01-1.05-3.97-2.18-5.88-3.4-2.03-1.3-4.17-2.81-5.84-4.15-8.96-7.18-16.17-16.59-20.48-27.26s-5.72-21-5.23-31.99c.11-2.44.34-4.87.63-7.3.07-.6.01-.12,0,0,.05-.34.1-.69.15-1.03.07-.5.15-.99.23-1.49.16-.98.34-1.96.54-2.94.48-2.41,1.07-4.81,1.78-7.17,1.12-3.7-4.67-5.29-5.79-1.6h0Z"/>
+            <path className={styles["cls-7"]}
+                  d="m234.23,438.94c2.68-1.72,5.99-2.53,8.98-2.9,3.65-.44,7.45-.68,11.09,0,1.59.3,3.24-.44,3.69-2.1.4-1.46-.49-3.39-2.1-3.69-4.34-.81-8.69-.72-13.05-.17-4.09.52-8.12,1.42-11.64,3.67-1.36.87-1.92,2.67-1.08,4.1.79,1.36,2.73,1.95,4.1,1.08h0Z"/>
+            <path className={styles["cls-7"]}
+                  d="m233.49,457.67c2.24-2.24,5.02-3.54,8.21-4.15,3.43-.66,7.27-.11,10.72.86,1.56.44,3.26-.54,3.69-2.1s-.53-3.25-2.1-3.69c-8.52-2.39-18.22-1.73-24.77,4.83-2.73,2.74,1.51,6.98,4.24,4.24h0Z"/>
+            <path className={styles["cls-7"]}
+                  d="m237.11,477.18c2.51-2.19,5.68-3.89,8.92-4.83,1.79-.52,3.18-.77,4.79-.87.87-.05,1.75-.06,2.63-.02.43.02.87.06,1.3.1.53.05-.36-.06.17.02.27.04.53.09.8.14,1.59.29,3.23-.44,3.69-2.1.4-1.46-.49-3.4-2.1-3.69-8.78-1.61-17.74,1.18-24.43,7-1.22,1.06-1.09,3.15,0,4.24,1.21,1.21,3.02,1.07,4.24,0h0Z"/>
+            <path className={styles["cls-7"]}
+                  d="m245.16,495.91c.58-.58,1.18-1.13,1.8-1.66.16-.13.31-.26.47-.39.76-.62-.21.15.24-.19.33-.24.66-.48,1-.71,1.39-.95,2.86-1.76,4.39-2.47.13-.06.42-.19.12-.06.19-.08.38-.15.56-.23.38-.15.76-.29,1.14-.42.76-.26,1.53-.49,2.31-.68.82-.2,1.66-.37,2.49-.5.5-.08-.42.04.09,0,.2-.02.39-.04.59-.06.44-.04.88-.07,1.33-.09,1.57-.07,3.07-1.33,3-3-.07-1.57-1.32-3.07-3-3-7.79.33-15.26,3.72-20.79,9.21-1.11,1.11-1.19,3.15,0,4.24s3.05,1.18,4.24,0h0Z"/>
+            <path className={styles["cls-7"]}
+                  d="m257.3,515.5c.4-.82.84-1.61,1.32-2.38.26-.4.52-.8.8-1.19.04-.06.46-.63.24-.33s.21-.26.25-.31c1.17-1.43,2.5-2.71,3.93-3.88.43-.35-.15.1.12-.1.18-.13.35-.26.53-.39.36-.25.72-.5,1.1-.74.78-.49,1.58-.95,2.41-1.36.2-.1.39-.19.59-.28.06-.03.86-.38.24-.12.4-.17.81-.32,1.22-.47.9-.32,1.82-.58,2.75-.79,1.53-.35,2.58-2.2,2.1-3.69-.52-1.6-2.05-2.47-3.69-2.1-8.1,1.85-15.44,7.61-19.1,15.09-.69,1.41-.43,3.31,1.08,4.1,1.35.71,3.37.43,4.1-1.08h0Z"/>
+            <path className={styles["cls-7"]}
+                  d="m285.18,508.64c-6.7,4.31-13.64,10.42-14.82,18.78-.22,1.55.38,3.3,2.1,3.69,1.41.32,3.46-.43,3.69-2.1.12-.82.29-1.63.53-2.43.14-.45.3-.88.46-1.32-.11.29-.06.14.03-.06.1-.21.2-.43.31-.64.38-.77.82-1.51,1.29-2.23.24-.36.49-.71.75-1.06-.29.39.1-.12.15-.19.15-.19.31-.37.46-.55,1.16-1.35,2.46-2.58,3.84-3.71.19-.16.39-.31.58-.47.43-.34-.54.4.22-.17.36-.27.72-.53,1.08-.79.77-.55,1.56-1.07,2.35-1.58,1.32-.85,1.98-2.7,1.08-4.1-.85-1.32-2.69-1.98-4.1-1.08h0Z"/>
+            <path className={styles["cls-7"]}
+                  d="m294.1,538.69c.28-.88.59-1.75.95-2.6.2-.5-.29.62.1-.23.08-.18.16-.36.24-.53.19-.4.38-.8.58-1.19.86-1.67,1.84-3.28,2.94-4.8.12-.16.23-.32.35-.48.09-.12.42-.54.17-.22.28-.35.56-.7.85-1.04.61-.72,1.26-1.43,1.92-2.1s1.29-1.26,1.97-1.86c.38-.33.76-.65,1.15-.97.16-.13.31-.25.47-.38-.39.3.35-.26.35-.26,1.26-.93,2.02-2.64,1.08-4.1-.8-1.25-2.75-2.07-4.1-1.08-6.89,5.09-12.17,12.06-14.81,20.25-.48,1.49.56,3.34,2.1,3.69,1.64.37,3.17-.5,3.69-2.1h0Z"/>
+        </g>
+        <g id="Layer_22_copy">
+            <path className={styles["cls-7"]}
+                  d="m468.81,128.01c24.65-11.29,52.96-7.76,78.1-.16,7.55,2.28,14.99,4.95,22.37,7.74,1.52.57,3.29-.64,3.69-2.1.46-1.69-.57-3.11-2.1-3.69-26.41-10-54.5-18.23-82.98-13.67-7.65,1.22-15.07,3.47-22.11,6.7-1.47.67-1.84,2.81-1.08,4.1.88,1.51,2.63,1.75,4.1,1.08h0Z"/>
+            <path className={styles["cls-7"]}
+                  d="m474.74,155.56c13.72-5.38,28.35-7.53,43.04-6.41,12.01.91,23.81,4.01,34.97,8.48,2.32.93,4.52,1.89,7.05,3.09,2.17,1.02,4.31,2.1,6.43,3.23,1.43.76,3.26.36,4.1-1.08.79-1.36.36-3.34-1.08-4.1-21.57-11.46-46.27-18.1-70.78-15.27-8.69,1.01-17.19,3.07-25.33,6.27-1.51.59-2.56,2.01-2.1,3.69.39,1.44,2.17,2.69,3.69,2.1h0Z"/>
+            <path className={styles["cls-7"]}
+                  d="m557.46,130.46c.22,7.83-.24,15.67-1.5,23.4-.26,1.6.41,3.23,2.1,3.69,1.43.39,3.43-.49,3.69-2.1,1.34-8.27,1.95-16.62,1.71-25-.11-3.85-6.11-3.87-6,0h0Z"/>
+            <path className={styles["cls-7"]}
+                  d="m537.28,124.11c1.31,7.66.8,15.55-1.31,23.01-1.05,3.72,4.73,5.31,5.79,1.6,2.42-8.55,2.81-17.46,1.31-26.2-.27-1.6-2.24-2.49-3.69-2.1-1.69.46-2.37,2.09-2.1,3.69h0Z"/>
+            <path className={styles["cls-7"]}
+                  d="m516.35,120.34c.3,7.66.19,15.32-.32,22.97-.11,1.62,1.46,3,3,3,1.71,0,2.89-1.38,3-3,.51-7.65.61-15.31.32-22.97-.06-1.62-1.33-3-3-3-1.58,0-3.06,1.37-3,3h0Z"/>
+            <path className={styles["cls-7"]}
+                  d="m494.51,120.13c1.65,7.75,2.81,15.58,3.45,23.47.13,1.62,1.29,3,3,3,1.52,0,3.13-1.38,3-3-.68-8.42-1.9-16.8-3.67-25.07-.34-1.59-2.19-2.51-3.69-2.1-1.64.45-2.43,2.1-2.1,3.69h0Z"/>
+            <path className={styles["cls-7"]}
+                  d="m475.22,124.52c.83,1.53,1.05,3.33,1.36,5.02.38,2.08.74,4.16,1.08,6.25.65,4.07,1.2,8.16,1.66,12.26.18,1.61,1.25,3,3,3,1.48,0,3.18-1.38,3-3-.51-4.63-1.13-9.25-1.87-13.85-.67-4.19-1-8.92-3.05-12.71-1.84-3.4-7.02-.37-5.18,3.03h0Z"/>
+        </g>
+        <g id="Layer_25_copy">
+            <g id="Layer_34_copy">
+                <path className={styles["cls-7"]}
+                      d="m488.89,595.21c15.74,8.79,32.68,15.28,50.26,19.25,17.14,3.87,34.48,5.72,52.02,3.66,10.13-1.19,20.1-3.42,29.74-6.75,1.53-.53,2.54-2.06,2.1-3.69-.41-1.49-2.15-2.63-3.69-2.1-17.47,6.04-36.02,8.5-54.46,7.03-7.43-.59-14.62-1.84-22.02-3.47s-14-3.39-20.83-5.7c-10.43-3.53-20.48-8.05-30.09-13.41-3.38-1.88-6.4,3.3-3.03,5.18h0Z"/>
+                <path className={styles["cls-7"]}
+                      d="m484.61,628.11c17.01,7.52,34.74,13.91,52.78,18.46,16.39,4.13,33.07,5.97,49.95,4.85,12.32-.82,24.55-3,36.45-6.28,3.72-1.03,2.14-6.82-1.6-5.79-18.28,5.04-37.29,7.42-56.24,6.03-1.65-.12-3.29-.27-4.93-.45-.73-.08-1.47-.16-2.2-.26-.35-.04-.7-.09-1.05-.13.76.1-.31-.04-.55-.08-4.87-.69-9.7-1.64-14.49-2.76-9.38-2.19-18.61-5-27.71-8.14s-18.52-6.71-27.37-10.62c-1.48-.65-3.22-.43-4.1,1.08-.75,1.28-.41,3.45,1.08,4.1h0Z"/>
+                <path className={styles["cls-7"]}
+                      d="m500.37,600.75c-1,9.46-1.99,18.92-2.99,28.38-.17,1.61,1.5,3,3,3,1.76,0,2.83-1.38,3-3,1-9.46,1.99-18.92,2.99-28.38.17-1.61-1.5-3-3-3-1.76,0-2.83,1.38-3,3h0Z"/>
+                <path className={styles["cls-7"]}
+                      d="m520.74,607.67c-1.67,9.46-2.88,19-3.61,28.58-.12,1.62,1.47,3,3,3,1.73,0,2.88-1.38,3-3,.69-9.05,1.81-18.05,3.39-26.99.28-1.59-.43-3.23-2.1-3.69-1.45-.4-3.41.49-3.69,2.1h0Z"/>
+                <path className={styles["cls-7"]}
+                      d="m539.07,613.46c-1.41,9.58-2.73,19.17-3.97,28.78-.21,1.61,1.53,3,3,3,1.79,0,2.79-1.39,3-3,1.17-9.07,2.42-18.13,3.75-27.18.24-1.6-.4-3.22-2.1-3.69-1.41-.39-3.45.48-3.69,2.1h0Z"/>
+                <path className={styles["cls-7"]}
+                      d="m555.34,614.84c-.2,10.8-.15,21.59.17,32.39.11,3.85,6.11,3.87,6,0-.31-10.79-.37-21.59-.17-32.39.07-3.86-5.93-3.86-6,0h0Z"/>
+                <path className={styles["cls-7"]}
+                      d="m573.16,619.62c.5,9.47,1,18.94,1.5,28.41.09,1.62,1.32,3,3,3,1.56,0,3.09-1.37,3-3-.5-9.47-1-18.94-1.5-28.41-.09-1.62-1.32-3-3-3-1.56,0-3.09,1.37-3,3h0Z"/>
+                <path className={styles["cls-7"]}
+                      d="m589.73,618.18c.76,9.63,1.53,19.26,2.29,28.88.13,1.62,1.29,3,3,3,1.52,0,3.13-1.38,3-3-.76-9.63-1.53-19.26-2.29-28.88-.13-1.62-1.29-3-3-3-1.52,0-3.13,1.38-3,3h0Z"/>
+                <path className={styles["cls-7"]}
+                      d="m607.57,613.13c1.81,10.09,3.39,19.84,3.75,30.07.14,3.85,6.14,3.87,6,0-.38-10.66-2.08-21.19-3.97-31.67-.29-1.6-2.23-2.5-3.69-2.1-1.68.46-2.38,2.09-2.1,3.69h0Z"/>
+            </g>
+        </g>
+        <g id="Layer_24_copy">
+            <path className={styles["cls-7"]}
+                  d="m793.72,572.34c.01,24.72-5.48,49.39-16.17,71.7-2.46,5.13-5.18,10.13-8.14,14.99-2.01,3.31,3.17,6.33,5.18,3.03,13.13-21.57,21.35-45.9,24.11-70.99.68-6.22,1.02-12.47,1.01-18.72,0-3.86-6-3.87-6,0h0Z"/>
+            <path className={styles["cls-7"]}
+                  d="m824.95,572.65c-.77,28.22-6.54,56.2-17,82.43-2.61,6.56-5.55,13-8.74,19.3-.73,1.44-.38,3.25,1.08,4.1,1.34.78,3.37.37,4.1-1.08,6.28-12.38,11.54-25.3,15.66-38.56,4.57-14.73,7.69-29.87,9.43-45.19.79-6.98,1.28-13.99,1.47-21.01.11-3.86-5.89-3.86-6,0h0Z"/>
+            <path className={styles["cls-7"]}
+                  d="m826.75,582.08c-9.37.99-18.8.33-27.92-2.05-3.74-.97-5.33,4.81-1.6,5.79,9.61,2.5,19.64,3.3,29.51,2.26,1.61-.17,3-1.26,3-3,0-1.49-1.38-3.17-3-3h0Z"/>
+            <path className={styles["cls-7"]}
+                  d="m824.75,601.9c-9.59.42-19.41.83-28.54-2.66-1.51-.58-3.29.64-3.69,2.1-.46,1.69.58,3.11,2.1,3.69,9.59,3.66,20.06,3.31,30.13,2.87,1.62-.07,3-1.33,3-3,0-1.57-1.37-3.07-3-3h0Z"/>
+            <path className={styles["cls-7"]}
+                  d="m820.63,619.96c-9.45.97-19.12-.36-27.86-4.15-1.48-.65-3.22-.44-4.1,1.08-.74,1.27-.42,3.46,1.08,4.1,9.72,4.22,20.32,6.05,30.89,4.97,1.61-.16,3-1.26,3-3,0-1.49-1.38-3.17-3-3h0Z"/>
+            <path className={styles["cls-7"]}
+                  d="m814.94,638.83c-4.86.31-9.89.71-14.72-.15-4.71-.84-8.87-2.92-12.84-5.51-1.36-.88-3.31-.27-4.1,1.08-.85,1.46-.29,3.22,1.08,4.1,4.36,2.84,9.12,5.19,14.28,6.11,5.41.96,10.86.71,16.32.36,1.62-.1,3-1.31,3-3,0-1.54-1.37-3.1-3-3h0Z"/>
+            <path className={styles["cls-7"]}
+                  d="m809.03,657.41c-10.71.92-20.18-4.01-29.09-9.34-3.32-1.99-6.34,3.2-3.03,5.18,9.76,5.84,20.4,11.16,32.12,10.16,1.61-.14,3-1.28,3-3,0-1.52-1.38-3.14-3-3h0Z"/>
+        </g>
+    </svg>
 };
